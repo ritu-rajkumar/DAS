@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Aastraa / Full-Service Growth, Build & Design Agency</title>
-    <meta name="description" content="Digital Aastraa is a full-service agency crafting exceptional websites, custom digital platforms, and growth ad engines for ambitious brands.">
+    <meta name="description"
+        content="Digital Aastraa is a full-service agency crafting exceptional websites, custom digital platforms, and growth ad engines for ambitious brands.">
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T8BPH4C8');</script>
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T8BPH4C8');</script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=DotGothic16&family=Instrument+Serif:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=DotGothic16&family=Instrument+Serif:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Calendly link widget begin -->
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+    <link rel="preconnect" href="https://calendly.com">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
+    <!-- Calendly link widget end -->
 </head>
+
 <body>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8BPH4C8"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8BPH4C8" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- ===== MOBILE SPLASH / PAGE LOAD ANIMATION ===== -->
@@ -83,7 +98,8 @@
                 </a>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-controls="mobileMenuOverlay" aria-expanded="false">
+                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu"
+                    aria-controls="mobileMenuOverlay" aria-expanded="false">
                     <span class="mob-bar mob-bar-1"></span>
                     <span class="mob-bar mob-bar-2"></span>
                     <span class="mob-bar mob-bar-3"></span>
@@ -96,70 +112,126 @@
     <div class="sheet-backdrop" id="sheetBackdrop"></div>
 
     <!-- ================= MOBILE BOTTOM SHEET MENU ================= -->
-    <div class="mobile-bottom-sheet" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="mobile-bottom-sheet" id="mobileMenuOverlay" role="dialog" aria-modal="true"
+        aria-label="Mobile navigation" aria-hidden="true" inert>
         <!-- Drag Handle -->
         <div class="sheet-drag-handle"></div>
 
         <!-- Sheet Header -->
         <div class="sheet-header">
-              <div class="sheet-brand" aria-label="Digital Aastraa Solution">
-                  <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="sheet-logo">
-                  <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
+            <div class="sheet-brand" aria-label="Digital Aastraa Solution">
+                <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="sheet-logo">
+                <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
                 <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
             </div>
             <button class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close menu">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
             </button>
         </div>
 
         <!-- Clean mobile navigation -->
         <nav class="sheet-nav">
-            <a href="#" class="sheet-nav-row" id="sheetHomeLink">
+            <a href="#" class="sheet-nav-row" id="sheetHomeLink" data-section="heroSection" aria-current="page">
+                <span class="snr-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m3 10 9-7 9 7" />
+                        <path d="M5 9v11h14V9M9 20v-7h6v7" />
+                    </svg>
+                </span>
                 <span class="snr-index">01</span>
                 <div class="snr-text">
                     <span class="snr-label">Home</span>
                     <span class="snr-sub">Back to the beginning</span>
                 </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
             </a>
-            <a href="#what-we-do" class="sheet-nav-row">
+            <a href="#what-we-do" class="sheet-nav-row" data-section="what-we-do">
+                <span class="snr-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7" rx="2" />
+                        <rect x="14" y="3" width="7" height="7" rx="2" />
+                        <rect x="3" y="14" width="7" height="7" rx="2" />
+                        <rect x="14" y="14" width="7" height="7" rx="2" />
+                    </svg>
+                </span>
                 <span class="snr-index">02</span>
                 <div class="snr-text">
                     <span class="snr-label">Services</span>
                     <span class="snr-sub">Four connected capabilities</span>
                 </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
             </a>
-            <a href="#process" class="sheet-nav-row">
+            <a href="#process" class="sheet-nav-row" data-section="process">
+                <span class="snr-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="6" cy="6" r="2" />
+                        <circle cx="18" cy="18" r="2" />
+                        <path d="M8 6h5a3 3 0 0 1 3 3v1M16 14v-1a3 3 0 0 0-3-3H8" />
+                    </svg>
+                </span>
                 <span class="snr-index">03</span>
                 <div class="snr-text">
                     <span class="snr-label">How We Work</span>
                     <span class="snr-sub">A focused five-step process</span>
                 </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
             </a>
-            <a href="#stand-out" class="sheet-nav-row">
+            <a href="#stand-out" class="sheet-nav-row" data-section="stand-out">
+                <span class="snr-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 5h16v14H4z" />
+                        <path d="m4 15 4-4 3 3 3-3 6 6" />
+                        <circle cx="16.5" cy="8.5" r="1.5" />
+                    </svg>
+                </span>
                 <span class="snr-index">04</span>
                 <div class="snr-text">
                     <span class="snr-label">Our Work</span>
                     <span class="snr-sub">Ideas designed to stand out</span>
                 </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
             </a>
             <a href="blog.html" class="sheet-nav-row">
+                <span class="snr-icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 3h10l4 4v14H5z" />
+                        <path d="M15 3v5h5M8 12h8M8 16h6" />
+                    </svg>
+                </span>
                 <span class="snr-index">05</span>
                 <div class="snr-text">
                     <span class="snr-label">Blog</span>
                     <span class="snr-sub">Ideas, updates and insights</span>
                 </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6" />
+                </svg>
             </a>
         </nav>
 
         <!-- Sheet CTA -->
         <div class="sheet-footer">
             <a href="#contact" class="sheet-cta-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
                 BOOK FREE AUDIT
             </a>
             <a href="mailto:hello@digitalaastraa.com" class="sheet-email-link">hello@digitalaastraa.com</a>
@@ -186,15 +258,18 @@
             <div class="hero-bottom-row">
                 <div class="hero-subtitle-col">
                     <p class="hero-subtitle">
-                        A full-service digital agency crafting exceptional websites and high-converting products for <strong class="text-highlight-bold">ambitious brands</strong>. We transform your vision into <strong class="text-highlight-orange">digital reality</strong>.
+                        A full-service digital agency crafting exceptional websites and high-converting products for
+                        <strong class="text-highlight-bold">ambitious brands</strong>. We transform your vision into
+                        <strong class="text-highlight-orange">digital reality</strong>.
                     </p>
                 </div>
                 <div class="hero-cta-col">
                     <a href="#contact" class="hero-pill-btn">
                         <span>Book Your Free Digital Audit</span>
-                        <svg class="pill-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14"/>
-                            <path d="m12 5 7 7-7 7"/>
+                        <svg class="pill-arrow-icon" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
                         </svg>
                     </a>
                 </div>
@@ -209,8 +284,10 @@
             <!-- Section Header -->
             <div class="manifesto-header">
                 <h3 class="manifesto-eyebrow">WHAT WE THINK</h3>
-                <svg class="manifesto-brush-stroke" width="90" height="14" viewBox="0 0 90 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 10.5C28.5 3.5 63.5 1.5 87 6.5" stroke="#FF5528" stroke-width="3" stroke-linecap="round" />
+                <svg class="manifesto-brush-stroke" width="90" height="14" viewBox="0 0 90 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10.5C28.5 3.5 63.5 1.5 87 6.5" stroke="#FF5528" stroke-width="3"
+                        stroke-linecap="round" />
                 </svg>
             </div>
 
@@ -220,32 +297,42 @@
             </div>
 
             <div class="manifesto-grid">
-                
+
                 <!-- Right: Text (Editorial Style) -->
                 <div class="manifesto-text-col">
-                    <h2 class="manifesto-headline">
-                        <span class="headline-primary">Attention isn't the finish line</span><br>
-                        <span class="headline-secondary">it's where the real work begins.</span>
-                        <span class="attention-pen" aria-hidden="true">
-                            <svg viewBox="0 0 32 32" fill="none"><path d="M7 24.5 9.2 17 22.7 3.5a2.1 2.1 0 0 1 3 0l2.8 2.8a2.1 2.1 0 0 1 0 3L15 22.8 7 24.5Z" fill="currentColor"/><path d="m20.8 5.4 5.8 5.8" stroke="#F7EBDD" stroke-width="2"/><path d="m9.2 17 5.8 5.8" stroke="#F7EBDD" stroke-width="1.5"/></svg>
-                        </span>
+                    <h2 class="manifesto-headline particle-headline" aria-label="Impossible to ignore">
+                        <canvas class="attention-particle-canvas" id="attentionParticleCanvas"
+                            aria-hidden="true"></canvas>
+                        <span class="attention-particle-fallback" aria-hidden="true">IMPOSSIBLE<br>TO IGNORE.</span>
                     </h2>
                     <div class="attention-control">
-                        <div class="attention-warning-note">
-                            <span>don't press</span>
-                            <svg viewBox="0 0 52 48" fill="none" aria-hidden="true"><path d="M5 5c25-3 43 8 35 28-2 5-5 8-10 10"/><path d="m30 39 1 7 7-3"/></svg>
+                        <div class="attention-warning-note" aria-hidden="true">
+                            <span>don't press this button</span>
+                            <svg viewBox="0 0 120 118" fill="none">
+                                <path d="M48 12c38-2 61 13 60 36-1 22-18 39-43 52" />
+                                <path d="m73 84-9 17 19-5" />
+                            </svg>
                         </div>
-                        <button class="attention-push-button" id="attentionPushButton" type="button">
-                            <span>Don't press it</span>
-                        </button>
+
+                        <div class="attention-machine attention-machine-image">
+                            <img src="Asset/Alert Button.png" alt="" aria-hidden="true" draggable="false">
+                            <button class="attention-push-button attention-image-hotspot" id="attentionPushButton"
+                                type="button" aria-label="Don't press this button"></button>
+                        </div>
                     </div>
                     <div class="manifesto-content">
                         <div class="manifesto-paragraphs">
                             <p class="drop-cap-para">
-                                <span class="drop-cap">A</span> lot of agencies promise you clicks and traffic, but if those don't turn into sales, they mean nothing. We are a performance marketing agency that focuses purely on growing your revenue. We don't just run ads—we find your perfect customers and give them a reason to buy.
+                                <span class="drop-cap">A</span> lot of agencies promise you clicks and traffic, but if
+                                those don't turn into sales, they mean nothing. We are a performance marketing agency
+                                that focuses purely on growing your revenue. We don't just run ads—we find your perfect
+                                customers and give them a reason to buy.
                             </p>
                             <p>
-                                Our process is simple: we understand your business, reach your ideal audience, and build a system that works quietly in the background to generate sales. We believe marketing shouldn't be confusing. It should just work, and your success is the only thing we care about.
+                                Our process is simple: we understand your business, reach your ideal audience, and build
+                                a system that works quietly in the background to generate sales. We believe marketing
+                                shouldn't be confusing. It should just work, and your success is the only thing we care
+                                about.
                             </p>
                         </div>
                     </div>
@@ -262,56 +349,131 @@
                 <div class="capabilities-heading-main">
                     <h2>Everything you need to<br><span>build, market & grow.</span></h2>
                 </div>
-                <p>Strategy, creative, technology and automation—connected to help your business attract, convert and retain more customers.</p>
+                <p>Strategy, creative, technology and automation—connected to help your business attract, convert and
+                    retain more customers.</p>
             </div>
 
             <div class="capabilities-list">
                 <article class="capability-row">
                     <span class="capability-index">01</span>
-                    <div class="capability-title"><h3>Performance Marketing</h3></div>
+                    <div class="capability-title">
+                        <h3>Performance Marketing</h3>
+                    </div>
                     <p>Advertising campaigns built to reach the right people and create measurable sales.</p>
-                    <button class="capability-toggle" type="button" aria-expanded="false" aria-label="Show Performance Marketing details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-                    <div class="capability-details"><div class="capability-details-inner">
-                        <div class="capability-detail-copy"><p>We plan, launch and improve your advertising across Meta and Google. Every campaign is tracked clearly, so you know what is bringing enquiries and sales.</p></div>
-                        <ul><li>Meta, Google and paid advertising</li><li>Tracking, retargeting and optimisation</li><li>Simple reports focused on results</li></ul>
-                        <a class="service-cta" href="#contact" data-service-value="performance-marketing"><span class="service-cta-label">Discuss your growth goals</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-                    </div></div>
+                    <button class="capability-toggle" type="button" aria-expanded="false"
+                        aria-label="Show Performance Marketing details"><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="capability-details">
+                        <div class="capability-details-inner">
+                            <div class="capability-detail-copy">
+                                <p>We plan, launch and improve your advertising across Meta and Google. Every campaign
+                                    is tracked clearly, so you know what is bringing enquiries and sales.</p>
+                            </div>
+                            <ul>
+                                <li>Meta, Google and paid advertising</li>
+                                <li>Tracking, retargeting and optimisation</li>
+                                <li>Simple reports focused on results</li>
+                            </ul>
+                            <a class="service-cta" href="#contact" data-service-value="performance-marketing"><span
+                                    class="service-cta-label">Discuss your growth goals</span><span
+                                    class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg></span></a>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="capability-row">
                     <span class="capability-index">02</span>
-                    <div class="capability-title"><h3>Branding, Creative & Social Media</h3></div>
+                    <div class="capability-title">
+                        <h3>Branding, Creative & Social Media</h3>
+                    </div>
                     <p>A complete brand and social presence, planned, created and managed by one team.</p>
-                    <button class="capability-toggle" type="button" aria-expanded="false" aria-label="Show Branding, Creative and Social Media details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-                    <div class="capability-details"><div class="capability-details-inner">
-                        <div class="capability-detail-copy"><p>We define your brand style and manage your social media month after month—from planning ideas to publishing content and responding to your audience.</p></div>
-                        <ul><li>Brand identity and content direction</li><li>Posts, reels, captions and publishing</li><li>Community management and monthly reports</li></ul>
-                        <a class="service-cta" href="#contact" data-service-value="brand-social"><span class="service-cta-label">Build your brand presence</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-                    </div></div>
+                    <button class="capability-toggle" type="button" aria-expanded="false"
+                        aria-label="Show Branding, Creative and Social Media details"><svg viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="capability-details">
+                        <div class="capability-details-inner">
+                            <div class="capability-detail-copy">
+                                <p>We define your brand style and manage your social media month after month—from
+                                    planning ideas to publishing content and responding to your audience.</p>
+                            </div>
+                            <ul>
+                                <li>Brand identity and content direction</li>
+                                <li>Posts, reels, captions and publishing</li>
+                                <li>Community management and monthly reports</li>
+                            </ul>
+                            <a class="service-cta" href="#contact" data-service-value="brand-social"><span
+                                    class="service-cta-label">Build your brand presence</span><span
+                                    class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg></span></a>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="capability-row">
                     <span class="capability-index">03</span>
-                    <div class="capability-title"><h3>Websites, Apps & Software</h3></div>
+                    <div class="capability-title">
+                        <h3>Websites, Apps & Software</h3>
+                    </div>
                     <p>Clear, fast digital products that make your business easier to use and easier to grow.</p>
-                    <button class="capability-toggle" type="button" aria-expanded="false" aria-label="Show Web and Digital Experiences details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-                    <div class="capability-details"><div class="capability-details-inner">
-                        <div class="capability-detail-copy"><p>From a high-converting website to a custom app or business software, we handle the structure, design, development and launch in one connected process.</p></div>
-                        <ul><li>Websites and conversion-focused landing pages</li><li>Web and mobile applications</li><li>Custom software and integrations</li></ul>
-                        <a class="service-cta" href="#contact" data-service-value="web-digital"><span class="service-cta-label">Plan your digital product</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-                    </div></div>
+                    <button class="capability-toggle" type="button" aria-expanded="false"
+                        aria-label="Show Web and Digital Experiences details"><svg viewBox="0 0 24 24"
+                            aria-hidden="true">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="capability-details">
+                        <div class="capability-details-inner">
+                            <div class="capability-detail-copy">
+                                <p>From a high-converting website to a custom app or business software, we handle the
+                                    structure, design, development and launch in one connected process.</p>
+                            </div>
+                            <ul>
+                                <li>Websites and conversion-focused landing pages</li>
+                                <li>Web and mobile applications</li>
+                                <li>Custom software and integrations</li>
+                            </ul>
+                            <a class="service-cta" href="#contact" data-service-value="web-digital"><span
+                                    class="service-cta-label">Plan your digital product</span><span
+                                    class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg></span></a>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="capability-row">
                     <span class="capability-index">04</span>
-                    <div class="capability-title"><h3>AI & Automation</h3></div>
+                    <div class="capability-title">
+                        <h3>AI & Automation</h3>
+                    </div>
                     <p>Connected workflows that reduce manual work and help your team respond faster.</p>
-                    <button class="capability-toggle" type="button" aria-expanded="false" aria-label="Show AI and Automation details"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-                    <div class="capability-details"><div class="capability-details-inner">
-                        <div class="capability-detail-copy"><p>We connect your tools and automate repetitive steps so leads move forward without delay. The result is fewer missed follow-ups and more time for valuable work.</p></div>
-                        <ul><li>CRM and lead workflows</li><li>Email and WhatsApp follow-ups</li><li>AI tools, browser extensions and integrations</li></ul>
-                        <a class="service-cta" href="#contact" data-service-value="ai-automation"><span class="service-cta-label">Automate your workflow</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-                    </div></div>
+                    <button class="capability-toggle" type="button" aria-expanded="false"
+                        aria-label="Show AI and Automation details"><svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg></button>
+                    <div class="capability-details">
+                        <div class="capability-details-inner">
+                            <div class="capability-detail-copy">
+                                <p>We connect your tools and automate repetitive steps so leads move forward without
+                                    delay. The result is fewer missed follow-ups and more time for valuable work.</p>
+                            </div>
+                            <ul>
+                                <li>CRM and lead workflows</li>
+                                <li>Email and WhatsApp follow-ups</li>
+                                <li>AI tools, browser extensions and integrations</li>
+                            </ul>
+                            <a class="service-cta" href="#contact" data-service-value="ai-automation"><span
+                                    class="service-cta-label">Automate your workflow</span><span
+                                    class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
+                                        <path d="M5 12h14M13 6l6 6-6 6" />
+                                    </svg></span></a>
+                        </div>
+                    </div>
                 </article>
             </div>
         </div>
@@ -322,29 +484,45 @@
         <div class="workflow-container">
             <div class="workflow-intro">
                 <h2>Simple process.<br><span>Focused execution.</span></h2>
-                <p>No black boxes or bloated presentations. Just a clear rhythm that keeps strategy close to execution and results visible.</p>
+                <p>No black boxes or bloated presentations. Just a clear rhythm that keeps strategy close to execution
+                    and results visible.</p>
             </div>
 
             <ol class="workflow-steps">
                 <li class="workflow-step">
                     <div class="workflow-step-marker"><span>01</span></div>
-                    <div class="workflow-step-copy"><h3>Discover</h3><p>Understand your business, audience and commercial goals.</p></div>
+                    <div class="workflow-step-copy">
+                        <h3>Discover</h3>
+                        <p>Understand your business, audience and commercial goals.</p>
+                    </div>
                 </li>
                 <li class="workflow-step">
                     <div class="workflow-step-marker"><span>02</span></div>
-                    <div class="workflow-step-copy"><h3>Strategise</h3><p>Build the right roadmap and channel mix for growth.</p></div>
+                    <div class="workflow-step-copy">
+                        <h3>Strategise</h3>
+                        <p>Build the right roadmap and channel mix for growth.</p>
+                    </div>
                 </li>
                 <li class="workflow-step">
                     <div class="workflow-step-marker"><span>03</span></div>
-                    <div class="workflow-step-copy"><h3>Execute</h3><p>Launch campaigns, creative and connected digital systems.</p></div>
+                    <div class="workflow-step-copy">
+                        <h3>Execute</h3>
+                        <p>Launch campaigns, creative and connected digital systems.</p>
+                    </div>
                 </li>
                 <li class="workflow-step">
                     <div class="workflow-step-marker"><span>04</span></div>
-                    <div class="workflow-step-copy"><h3>Optimise</h3><p>Measure signal, test continuously and improve the work.</p></div>
+                    <div class="workflow-step-copy">
+                        <h3>Optimise</h3>
+                        <p>Measure signal, test continuously and improve the work.</p>
+                    </div>
                 </li>
                 <li class="workflow-step">
                     <div class="workflow-step-marker"><span>05</span></div>
-                    <div class="workflow-step-copy"><h3>Scale</h3><p>Invest behind what works and expand with confidence.</p></div>
+                    <div class="workflow-step-copy">
+                        <h3>Scale</h3>
+                        <p>Invest behind what works and expand with confidence.</p>
+                    </div>
                 </li>
             </ol>
         </div>
@@ -353,23 +531,30 @@
     <!-- Previous Build / Grow / Scale interface kept hidden as a rollback reference -->
     <section class="editorial-section what-we-do-section" id="what-we-do-legacy" hidden>
         <div class="section-container">
-            
+
             <div class="manifesto-header">
                 <h3 class="manifesto-eyebrow">WHAT WE DO</h3>
-                <svg class="manifesto-brush-stroke" width="90" height="14" viewBox="0 0 90 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 10.5C28.5 3.5 63.5 1.5 87 6.5" stroke="#FF5528" stroke-width="3" stroke-linecap="round" />
+                <svg class="manifesto-brush-stroke" width="90" height="14" viewBox="0 0 90 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 10.5C28.5 3.5 63.5 1.5 87 6.5" stroke="#FF5528" stroke-width="3"
+                        stroke-linecap="round" />
                 </svg>
             </div>
 
             <!-- PREMIER INTERACTIVE CAPABILITIES LAYOUT -->
             <div class="interactive-capabilities-wrapper">
-                
+
                 <!-- LEFT COLUMN: PILL SELECTOR SIDEBAR (BUILD / GROW / SCALE) -->
                 <div class="capability-pills-sidebar">
-                    <div class="sidebar-header" style="border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1.5rem;">
+                    <div class="sidebar-header"
+                        style="border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 1.5rem;">
                         <button class="cap-pill-btn minimal-link-btn active" data-target="intro">
                             <span class="minimal-link-text">OUR GROWTH ENGINE</span>
-                            <svg class="minimal-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                            <svg class="minimal-link-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </button>
                     </div>
 
@@ -377,7 +562,12 @@
                         <!-- BUILD PILL -->
                         <button class="cap-pill-btn" data-target="build">
                             <span class="pill-icon-box">
-                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="16 18 22 12 16 6"></polyline>
+                                    <polyline points="8 6 2 12 8 18"></polyline>
+                                </svg>
                             </span>
                             <div class="pill-text-content">
                                 <span class="pill-label">01. BUILD</span>
@@ -389,7 +579,12 @@
                         <!-- GROW PILL -->
                         <button class="cap-pill-btn" data-target="grow">
                             <span class="pill-icon-box">
-                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                                    <polyline points="16 7 22 7 22 13"></polyline>
+                                </svg>
                             </span>
                             <div class="pill-text-content">
                                 <span class="pill-label">02. GROW</span>
@@ -401,7 +596,20 @@
                         <!-- SCALE PILL -->
                         <button class="cap-pill-btn" data-target="scale">
                             <span class="pill-icon-box">
-                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                                <svg class="pill-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                    <rect x="9" y="9" width="6" height="6"></rect>
+                                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                                </svg>
                             </span>
                             <div class="pill-text-content">
                                 <span class="pill-label">03. SCALE</span>
@@ -414,14 +622,21 @@
 
                 <!-- RIGHT COLUMN: CAPABILITY CARDS (STAGE) -->
                 <div class="capability-showcase-stage">
-                    
+
                     <!-- PANEL 00: INTRO -->
                     <div class="capability-panel active" id="panel-intro">
                         <div class="intro-panel-content">
-                            <h3 class="intro-heading">We turn bold ideas into <span class="highlight-orange">unstoppable businesses.</span></h3>
+                            <h3 class="intro-heading">We turn bold ideas into <span class="highlight-orange">unstoppable
+                                    businesses.</span></h3>
                             <div class="intro-paragraphs">
-                                <p>We don't just build websites or run basic ads. We act as your <span class="highlight-bold">dedicated digital growth partner</span>. Our team deeply understands your business goals to create modern software, dynamic web platforms, and highly effective marketing campaigns tailored perfectly for you.</p>
-                                <p>Whether you need to <span class="highlight-gradient">scale your revenue</span>, <span class="highlight-gradient">automate your operations</span>, or dominate your market with an unforgettable brand, we engineer the end-to-end solutions that make it happen.</p>
+                                <p>We don't just build websites or run basic ads. We act as your <span
+                                        class="highlight-bold">dedicated digital growth partner</span>. Our team deeply
+                                    understands your business goals to create modern software, dynamic web platforms,
+                                    and highly effective marketing campaigns tailored perfectly for you.</p>
+                                <p>Whether you need to <span class="highlight-gradient">scale your revenue</span>, <span
+                                        class="highlight-gradient">automate your operations</span>, or dominate your
+                                    market with an unforgettable brand, we engineer the end-to-end solutions that make
+                                    it happen.</p>
                             </div>
                         </div>
                     </div>
@@ -432,49 +647,77 @@
                             <div class="service-card theme-blue">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Updated</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-sphere"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Websites</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Design</span><span class="sc-tag">Develop</span></div>
-                                    <p class="sc-desc">We build fast, scalable, and beautiful web platforms tailored to your business needs.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Design</span><span
+                                            class="sc-tag">Develop</span></div>
+                                    <p class="sc-desc">We build fast, scalable, and beautiful web platforms tailored to
+                                        your business needs.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-dark">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">New</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-pill"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Mobile Apps</h4>
-                                    <div class="sc-tags"><span class="sc-tag">iOS</span><span class="sc-tag">Android</span></div>
-                                    <p class="sc-desc">High-performance mobile applications that users love to engage with daily.</p>
+                                    <div class="sc-tags"><span class="sc-tag">iOS</span><span
+                                            class="sc-tag">Android</span></div>
+                                    <p class="sc-desc">High-performance mobile applications that users love to engage
+                                        with daily.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-light">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Custom</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-diamond"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Software</h4>
-                                    <div class="sc-tags"><span class="sc-tag">SaaS</span><span class="sc-tag">Tools</span></div>
-                                    <p class="sc-desc">Bespoke software solutions built precisely for your unique operational needs.</p>
+                                    <div class="sc-tags"><span class="sc-tag">SaaS</span><span
+                                            class="sc-tag">Tools</span></div>
+                                    <p class="sc-desc">Bespoke software solutions built precisely for your unique
+                                        operational needs.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-orange">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Internal</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-ring"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Automation</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Workflows</span><span class="sc-tag">Systems</span></div>
-                                    <p class="sc-desc">Streamline internal processes with powerful automation and AI integrations.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Workflows</span><span
+                                            class="sc-tag">Systems</span></div>
+                                    <p class="sc-desc">Streamline internal processes with powerful automation and AI
+                                        integrations.</p>
                                 </div>
                             </div>
                         </div>
@@ -486,49 +729,77 @@
                             <div class="service-card theme-blue">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Ads</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-cone"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Performance</h4>
-                                    <div class="sc-tags"><span class="sc-tag">PPC</span><span class="sc-tag">Social</span></div>
-                                    <p class="sc-desc">Highly targeted ad campaigns that drive immediate and measurable revenue.</p>
+                                    <div class="sc-tags"><span class="sc-tag">PPC</span><span
+                                            class="sc-tag">Social</span></div>
+                                    <p class="sc-desc">Highly targeted ad campaigns that drive immediate and measurable
+                                        revenue.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-dark">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Organic</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-sphere"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">SEO</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Ranking</span><span class="sc-tag">Content</span></div>
-                                    <p class="sc-desc">Dominate search results and capture high-intent customers for the long term.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Ranking</span><span
+                                            class="sc-tag">Content</span></div>
+                                    <p class="sc-desc">Dominate search results and capture high-intent customers for the
+                                        long term.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-light">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">CRO</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-diamond"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Conversion</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Testing</span><span class="sc-tag">UX</span></div>
-                                    <p class="sc-desc">Turn more of your existing traffic into paying customers with data-driven tweaks.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Testing</span><span
+                                            class="sc-tag">UX</span></div>
+                                    <p class="sc-desc">Turn more of your existing traffic into paying customers with
+                                        data-driven tweaks.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-orange">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Data</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-ring"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Analytics</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Tracking</span><span class="sc-tag">Metrics</span></div>
-                                    <p class="sc-desc">Understand exactly where your growth is coming from with advanced tracking.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Tracking</span><span
+                                            class="sc-tag">Metrics</span></div>
+                                    <p class="sc-desc">Understand exactly where your growth is coming from with advanced
+                                        tracking.</p>
                                 </div>
                             </div>
                         </div>
@@ -540,49 +811,77 @@
                             <div class="service-card theme-blue">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">AI</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-pill"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Process</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Automation</span><span class="sc-tag">Tools</span></div>
-                                    <p class="sc-desc">Replace manual work with intelligent systems that run your business on autopilot.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Automation</span><span
+                                            class="sc-tag">Tools</span></div>
+                                    <p class="sc-desc">Replace manual work with intelligent systems that run your
+                                        business on autopilot.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-dark">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Global</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-sphere"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Omnichannel</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Expansion</span><span class="sc-tag">Reach</span></div>
-                                    <p class="sc-desc">Scale your marketing across every channel seamlessly to capture full market share.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Expansion</span><span
+                                            class="sc-tag">Reach</span></div>
+                                    <p class="sc-desc">Scale your marketing across every channel seamlessly to capture
+                                        full market share.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-light">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Tech</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-cone"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">Stack</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Integration</span><span class="sc-tag">APIs</span></div>
-                                    <p class="sc-desc">Connect your tools, databases, and apps to create one unified powerhouse.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Integration</span><span
+                                            class="sc-tag">APIs</span></div>
+                                    <p class="sc-desc">Connect your tools, databases, and apps to create one unified
+                                        powerhouse.</p>
                                 </div>
                             </div>
                             <div class="service-card theme-orange">
                                 <div class="sc-top-row">
                                     <div class="sc-badge">Growth</div>
-                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                                    <a href="#contact" class="sc-icon-btn"><svg width="16" height="16"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                                            <polyline points="7 7 17 7 17 17"></polyline>
+                                        </svg></a>
                                 </div>
                                 <div class="pro-3d-icon shape-diamond"></div>
                                 <div class="sc-bottom-content">
                                     <h4 class="sc-title-main">RevOps</h4>
-                                    <div class="sc-tags"><span class="sc-tag">Sales</span><span class="sc-tag">Operations</span></div>
-                                    <p class="sc-desc">Align sales, marketing, and success to drive predictable and explosive revenue.</p>
+                                    <div class="sc-tags"><span class="sc-tag">Sales</span><span
+                                            class="sc-tag">Operations</span></div>
+                                    <p class="sc-desc">Align sales, marketing, and success to drive predictable and
+                                        explosive revenue.</p>
                                 </div>
                             </div>
                         </div>
@@ -615,15 +914,21 @@
                     <span class="so-line-black" data-delay="200">EXIST ONLINE.</span>
                     <span class="so-line-accent" data-delay="330">
                         STAND OUT.
-                        <svg class="so-brush-stroke" viewBox="0 0 300 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12C70 4 180 3 295 14" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                        <svg class="so-brush-stroke" viewBox="0 0 300 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12C70 4 180 3 295 14" stroke="currentColor" stroke-width="8"
+                                stroke-linecap="round" />
                         </svg>
                     </span>
                 </h2>
                 <a href="mailto:hello@kineticdigital.com" class="so-cta-btn" data-delay="480">
                     <span class="so-btn-fill"></span>
                     <span class="so-btn-text">START YOUR PROJECT</span>
-                    <svg class="so-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    <svg class="so-btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
                 </a>
             </div>
 
@@ -639,41 +944,53 @@
             <div class="contact-right">
                 <form class="contact-form">
                     <div class="form-group full-width">
-                        <label class="form-label">Name (required)</label>
+                        <label class="form-label" for="contact-name">Name (required)</label>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group half-width">
-                            <input type="text" class="form-input" placeholder="First Name" required>
-                        </div>
-                        <div class="form-group half-width">
-                            <input type="text" class="form-input" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    
                     <div class="form-group full-width">
+                        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Name" required
+                            aria-required="true">
+                    </div>
+
+                    <div class="form-group full-width mt-1">
+                        <input type="tel" id="contact-phone" name="phone" class="form-input"
+                            placeholder="Phone Number (required)" required aria-required="true" pattern="[0-9]*"
+                            minlength="10">
+                        <small class="mobile-phone-note"
+                            style="display: block; font-size: 0.75rem; color: #a0a0a0; margin-top: 5px; opacity: 0.8;">make
+                            sure your contact number is correct</small>
+                    </div>
+
+                    <div class="form-group full-width mt-1">
+                        <input type="email" id="contact-email" name="email" class="form-input"
+                            placeholder="Email (required)" required aria-required="true">
+                    </div>
+
+                    <div class="form-group full-width mt-1">
                         <div class="custom-select-wrapper">
-                            <select class="form-input select-input" id="serviceInterest" name="service" required>
-                                <option value="" disabled selected>Service</option>
+                            <select class="form-input select-input" id="serviceInterest" name="service" required
+                                aria-required="true">
+                                <option value="" disabled selected>Service (required)</option>
                                 <option value="performance-marketing">Performance Marketing</option>
                                 <option value="brand-social">Branding, Creative & Social Media</option>
                                 <option value="web-digital">Web & Digital Experiences</option>
                                 <option value="ai-automation">AI & Automation</option>
+                                <option value="other-service">Other (not listed here)</option>
                             </select>
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="form-group full-width mt-1">
-                        <input type="email" class="form-input" placeholder="Email (required)" required>
-                    </div>
-
                     <div class="form-checkbox">
-                        <input type="checkbox" id="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter">
                         <label for="newsletter">Sign up for news and updates</label>
                     </div>
 
                     <div class="form-group full-width mt-1">
-                        <input type="text" class="form-input" placeholder="Project description">
+                        <textarea id="contact-project" name="project_description" class="form-input" rows="3"
+                            placeholder="Project description" style="resize: vertical; min-height: 80px;"></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Submit</button>
@@ -688,66 +1005,141 @@
             <div class="faq-header">
                 <span class="faq-eyebrow">FAQS</span>
                 <h2 class="faq-heading">Questions?<br>We have answers.</h2>
+                <p class="faq-intro">Clear answers about our services, timelines, pricing and the way we work with
+                    growing businesses.</p>
             </div>
-            
+
             <div class="faq-list">
                 <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What is Kinetic Digital?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    <button class="faq-question" id="faq-question-1" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-1">
+                        <span>What is Digital Aastraa Solution?</span>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>We are a full-service digital agency focused on building platforms, growing audiences, and scaling operations through AI and automation.</p>
+                    <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>Digital Aastraa Solution is a full-service growth, design and technology agency. We bring
+                                strategy, creative, development, paid growth and automation together in one team, so
+                                you do not have to coordinate several disconnected vendors.</p>
+                            <ul>
+                                <li>One accountable team from discovery to delivery</li>
+                                <li>Clear milestones, updates and measurable outcomes</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" id="faq-question-2" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-2">
                         <span>What services do you offer?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>We offer end-to-end solutions: bespoke web & app development, performance marketing, SEO, and advanced business automation tools.</p>
+                    <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>Our work is organised around four connected capabilities:</p>
+                            <ul>
+                                <li>Performance marketing across Meta, Google and conversion funnels</li>
+                                <li>Branding, creative production and social media management</li>
+                                <li>Websites, mobile apps and custom business software</li>
+                                <li>AI workflows, automation and system integrations</li>
+                            </ul>
+                            <p>We can handle one focused requirement or combine these capabilities into a complete
+                                growth system.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" id="faq-question-3" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-3">
                         <span>How long does a typical project take?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Timelines vary based on complexity. A standard marketing campaign launch takes 2-4 weeks, while custom software development can take 3-6 months.</p>
+                    <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>Timing depends on scope, content readiness and integrations. As a practical guide,
+                                campaign launches usually take 2–4 weeks, focused websites 4–10 weeks, and custom apps
+                                or software 3–6 months.</p>
+                            <p>After discovery, you receive a phased timeline with milestones, review points and a
+                                clear launch plan before production begins.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" id="faq-question-4" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-4">
                         <span>How much do your services cost?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Our pricing is project-based or retainer-based depending on the service. We customize packages to fit your specific growth goals.</p>
+                    <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>Pricing is shaped by the outcome, scope and level of ongoing support. Builds are commonly
+                                quoted as fixed milestone-based projects, while marketing, creative and optimisation
+                                work is usually handled through a monthly retainer.</p>
+                            <p>We first understand your priorities, then share a transparent proposal showing what is
+                                included, the delivery schedule and the expected investment—without hidden extras.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" id="faq-question-5" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-5">
                         <span>Do you have customers like me?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>We work with everyone from funded startups to established enterprises across e-commerce, SaaS, and professional services.</p>
+                    <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>We support early-stage startups, growing small and medium businesses, and established
+                                teams across e-commerce, SaaS, professional services and other digital-first sectors.</p>
+                            <p>The strongest fit is a business that values quick communication, measurable goals and a
+                                long-term system—not isolated one-off tasks with no growth plan.</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">
+                    <button class="faq-question" id="faq-question-6" type="button" aria-expanded="false"
+                        aria-controls="faq-answer-6">
                         <span>Do you have a Startups program?</span>
-                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
                     </button>
-                    <div class="faq-answer">
-                        <p>Yes, we offer specialized launch packages designed to help early-stage startups find product-market fit and scale quickly.</p>
+                    <div class="faq-answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6"
+                        aria-hidden="true">
+                        <div class="faq-answer-inner">
+                            <p>Yes. Our startup engagements prioritise the smallest useful launch, rapid validation and
+                                a roadmap that can grow with real customer feedback.</p>
+                            <ul>
+                                <li>Positioning, landing page or MVP planning</li>
+                                <li>Launch creative, tracking and early acquisition campaigns</li>
+                                <li>Post-launch learning and the next growth sprint</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -756,18 +1148,23 @@
     <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
         <div class="footer-container">
-            
+
             <div class="footer-top">
                 <!-- Brand Column -->
                 <div class="footer-brand-col">
                     <a href="#" class="footer-logo">
                         <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="footer-logo-img">
                     </a>
-                    <p class="footer-tagline">We turn bold ideas into high-performing digital products & scalable growth engines.</p>
-                    
+                    <p class="footer-tagline">We turn bold ideas into high-performing digital products & scalable growth
+                        engines.</p>
+
                     <div class="footer-contact-info">
                         <a href="mailto:hello@digitalaastraa.com" class="footer-contact-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
                             <span>hello@digitalaastraa.com</span>
                         </a>
                     </div>
@@ -779,11 +1176,26 @@
                     <div class="f-col">
                         <h4 class="f-title">NAVIGATION</h4>
                         <ul class="f-list">
-                            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Home</a></li>
-                            <li><a href="#manifesto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> What We Think</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Services</a></li>
-                            <li><a href="#process"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> How We Work</a></li>
-                            <li><a href="#stand-out"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Stand Out</a></li>
+                            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Home</a></li>
+                            <li><a href="#manifesto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> What We Think</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Services</a></li>
+                            <li><a href="#process"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> How We Work</a></li>
+                            <li><a href="#stand-out"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Stand Out</a></li>
                         </ul>
                     </div>
 
@@ -791,12 +1203,30 @@
                     <div class="f-col">
                         <h4 class="f-title">OUR SERVICES</h4>
                         <ul class="f-list">
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Web Development</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> App Development</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Custom Software</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Performance Marketing</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> SEO & Organic Growth</a></li>
-                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Automation Systems</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Web Development</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> App Development</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Custom Software</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Performance Marketing</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> SEO & Organic Growth</a></li>
+                            <li><a href="#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg> Automation Systems</a></li>
                         </ul>
                     </div>
 
@@ -804,14 +1234,21 @@
                     <div class="f-col">
                         <h4 class="f-title">CONNECT</h4>
                         <div class="f-social-icons">
-                            <a href="#" class="social-icon-btn" aria-label="Instagram">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            <a href="https://www.instagram.com/digital_aastraasolution/" target="_blank"
+                                class="social-icon-btn" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
                             </a>
-                            <a href="#" class="social-icon-btn" aria-label="Facebook">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                            </a>
-                            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            <a href="https://www.facebook.com/aastraasolution" target="_blank" class="social-icon-btn"
+                                aria-label="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
                             </a>
                         </div>
                     </div>
@@ -820,7 +1257,7 @@
 
             <div class="footer-bottom">
                 <span class="f-copy">© 2026 DIGITAL AASTRAA. All rights reserved.</span>
-                
+
                 <div class="f-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -832,35 +1269,61 @@
 
     <!-- PINNED FLOATING BACK TO TOP BUTTON -->
     <button class="floating-back-to-top" id="floatingTopBtn" aria-label="Back to Top">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5" />
+            <polyline points="5 12 12 5 19 12" />
+        </svg>
         <span>TOP</span>
     </button>
 
     <!-- ================= MOBILE BOTTOM NAVIGATION DOCK ================= -->
     <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Mobile Navigation">
         <a href="#" class="dock-tab active" id="dockHome" aria-label="Home">
-            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
             <span class="dock-label">Home</span>
             <span class="dock-active-pip"></span>
         </a>
         <a href="#manifesto" class="dock-tab" id="dockThink" aria-label="What We Think">
-            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
             <span class="dock-label">Think</span>
             <span class="dock-active-pip"></span>
         </a>
         <a href="#contact" class="dock-tab dock-tab-cta" id="dockAudit" aria-label="Free Audit">
             <div class="dock-cta-inner">
-                <svg class="dock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg class="dock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.2">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
             </div>
             <span class="dock-label">Audit</span>
         </a>
         <a href="#what-we-do" class="dock-tab" id="dockServices" aria-label="Services">
-            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+            </svg>
             <span class="dock-label">Services</span>
             <span class="dock-active-pip"></span>
         </a>
         <button class="dock-tab" id="dockMenu" aria-label="Menu">
-            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
             <span class="dock-label">Menu</span>
             <span class="dock-active-pip"></span>
         </button>
@@ -868,182 +1331,214 @@
 
     <!-- FINAL TAB BAR FIX - inline wins over all stylesheets -->
     <style>
-    @media (max-width: 768px) {
-        /* Container: light grey pill background */
-        .capability-pills-sidebar {
-            background: #EBEBEB !important;
-            border-radius: 14px !important;
-            padding: 4px !important;
-            border: none !important;
-            box-shadow: none !important;
-            flex-direction: column !important;
+        @media (max-width: 768px) {
+
+            /* Container: light grey pill background */
+            .capability-pills-sidebar {
+                background: #EBEBEB !important;
+                border-radius: 14px !important;
+                padding: 4px !important;
+                border: none !important;
+                box-shadow: none !important;
+                flex-direction: column !important;
+            }
+
+            .sidebar-header {
+                display: none !important;
+            }
+
+            /* Row of tabs - no scroll, just flex */
+            .pill-list-group {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 3px !important;
+                overflow: visible !important;
+                scrollbar-width: none !important;
+                white-space: normal !important;
+            }
+
+            /* 3 equal tabs */
+            .pill-list-group .cap-pill-btn {
+                flex: 1 1 0% !important;
+                width: 0 !important;
+                min-width: 0 !important;
+                max-width: none !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 0.45rem 0.2rem !important;
+                border-radius: 10px !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                gap: 0.2rem !important;
+                transform: none !important;
+                cursor: pointer !important;
+            }
+
+            /* Active tab */
+            .pill-list-group .cap-pill-btn.active {
+                background: #FFFFFF !important;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            /* Icon box */
+            .pill-list-group .cap-pill-btn .pill-icon-box {
+                width: 28px !important;
+                height: 28px !important;
+                min-width: 28px !important;
+                border-radius: 8px !important;
+                background: rgba(0, 0, 0, 0.06) !important;
+                color: #999 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+
+            .pill-list-group .cap-pill-btn.active .pill-icon-box {
+                background: rgba(255, 85, 40, 0.12) !important;
+                color: #FF5528 !important;
+            }
+
+            .pill-list-group .cap-pill-btn .pill-icon {
+                width: 14px !important;
+                height: 14px !important;
+            }
+
+            /* Label */
+            .pill-list-group .cap-pill-btn .pill-label {
+                font-size: 0.62rem !important;
+                font-weight: 700 !important;
+                color: #999 !important;
+                text-align: center !important;
+                white-space: nowrap !important;
+                letter-spacing: 0.02em !important;
+                line-height: 1 !important;
+            }
+
+            .pill-list-group .cap-pill-btn.active .pill-label {
+                color: #111 !important;
+            }
+
+            /* Hide unneeded elements */
+            .pill-sub,
+            .pill-active-dot,
+            .pill-text-content .pill-sub {
+                display: none !important;
+            }
+
+            /* ── MOBILE CARDS: Vertical stacked, full-width ── */
+            .service-cards-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                overflow-x: visible !important;
+                scroll-snap-type: none !important;
+                gap: 1.5rem !important;
+                background: transparent !important;
+                border: none !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                padding-bottom: 0.5rem !important;
+                height: auto !important;
+                perspective: none !important;
+                position: static !important;
+            }
+
+            .service-card {
+                display: flex !important;
+                flex-direction: column !important;
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                height: 380px !important;
+                min-width: 100% !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                flex: none !important;
+                border-radius: 24px !important;
+                padding: 1.25rem !important;
+                box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08) !important;
+                overflow: hidden !important;
+                justify-content: flex-end !important;
+                scroll-snap-align: none !important;
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                pointer-events: auto !important;
+            }
+
+            .service-card.theme-blue {
+                background: #185bf0 !important;
+                color: #FFFFFF !important;
+            }
+
+            .service-card.theme-orange {
+                background: #e86b35 !important;
+                color: #FFFFFF !important;
+            }
+
+            .service-card.theme-dark {
+                background: #1c1c1e !important;
+                color: #FFFFFF !important;
+            }
+
+            /* Light gradient update for white card */
+            .service-card.theme-light {
+                background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%) !important;
+                color: #FFFFFF !important;
+                border: none !important;
+            }
+
+            /* Hide carousel dots on mobile */
+            .carousel-dots {
+                display: none !important;
+            }
+
+            .pro-3d-icon {
+                display: block !important;
+                position: absolute !important;
+                top: 30% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: 130px !important;
+                height: 130px !important;
+            }
+
+            .sc-top-row {
+                position: absolute !important;
+                top: 1.25rem !important;
+                left: 1.25rem !important;
+                right: 1.25rem !important;
+                display: flex !important;
+                pointer-events: none !important;
+            }
+
+            .sc-badge,
+            .sc-icon-btn {
+                pointer-events: auto !important;
+            }
+
+            .sc-bottom-content {
+                position: relative !important;
+                z-index: 2 !important;
+                margin-top: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+            }
+
+            .sc-title-main {
+                font-size: 1.5rem !important;
+            }
+
+            .sc-desc {
+                font-size: 0.85rem !important;
+            }
         }
-
-        .sidebar-header { display: none !important; }
-
-        /* Row of tabs - no scroll, just flex */
-        .pill-list-group {
-            display: flex !important;
-            flex-direction: row !important;
-            gap: 3px !important;
-            overflow: visible !important;
-            scrollbar-width: none !important;
-            white-space: normal !important;
-        }
-
-        /* 3 equal tabs */
-        .pill-list-group .cap-pill-btn {
-            flex: 1 1 0% !important;
-            width: 0 !important;
-            min-width: 0 !important;
-            max-width: none !important;
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            padding: 0.45rem 0.2rem !important;
-            border-radius: 10px !important;
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            gap: 0.2rem !important;
-            transform: none !important;
-            cursor: pointer !important;
-        }
-
-        /* Active tab */
-        .pill-list-group .cap-pill-btn.active {
-            background: #FFFFFF !important;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1) !important;
-        }
-
-        /* Icon box */
-        .pill-list-group .cap-pill-btn .pill-icon-box {
-            width: 28px !important;
-            height: 28px !important;
-            min-width: 28px !important;
-            border-radius: 8px !important;
-            background: rgba(0,0,0,0.06) !important;
-            color: #999 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-
-        .pill-list-group .cap-pill-btn.active .pill-icon-box {
-            background: rgba(255,85,40,0.12) !important;
-            color: #FF5528 !important;
-        }
-
-        .pill-list-group .cap-pill-btn .pill-icon {
-            width: 14px !important;
-            height: 14px !important;
-        }
-
-        /* Label */
-        .pill-list-group .cap-pill-btn .pill-label {
-            font-size: 0.62rem !important;
-            font-weight: 700 !important;
-            color: #999 !important;
-            text-align: center !important;
-            white-space: nowrap !important;
-            letter-spacing: 0.02em !important;
-            line-height: 1 !important;
-        }
-
-        .pill-list-group .cap-pill-btn.active .pill-label {
-            color: #111 !important;
-        }
-
-        /* Hide unneeded elements */
-        .pill-sub,
-        .pill-active-dot,
-        .pill-text-content .pill-sub { display: none !important; }
-
-        /* ── MOBILE CARDS: Vertical stacked, full-width ── */
-        .service-cards-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            overflow-x: visible !important;
-            scroll-snap-type: none !important;
-            gap: 1.5rem !important;
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            padding-bottom: 0.5rem !important;
-            height: auto !important;
-            perspective: none !important;
-            position: static !important;
-        }
-
-        .service-card {
-            display: flex !important;
-            flex-direction: column !important;
-            position: relative !important;
-            top: auto !important;
-            left: auto !important;
-            height: 380px !important;
-            min-width: 100% !important;
-            max-width: 100% !important;
-            width: 100% !important;
-            flex: none !important;
-            border-radius: 24px !important;
-            padding: 1.25rem !important;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.08) !important;
-            overflow: hidden !important;
-            justify-content: flex-end !important;
-            scroll-snap-align: none !important;
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-            pointer-events: auto !important;
-        }
-
-        .service-card.theme-blue { background: #185bf0 !important; color: #FFFFFF !important; }
-        .service-card.theme-orange { background: #e86b35 !important; color: #FFFFFF !important; }
-        .service-card.theme-dark { background: #1c1c1e !important; color: #FFFFFF !important; }
-        /* Light gradient update for white card */
-        .service-card.theme-light { background: linear-gradient(135deg, #8E2DE2 0%, #4A00E0 100%) !important; color: #FFFFFF !important; border: none !important; }
-
-        /* Hide carousel dots on mobile */
-        .carousel-dots { display: none !important; }
-
-        .pro-3d-icon {
-            display: block !important;
-            position: absolute !important;
-            top: 30% !important;
-            left: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            width: 130px !important;
-            height: 130px !important;
-        }
-
-        .sc-top-row {
-            position: absolute !important;
-            top: 1.25rem !important;
-            left: 1.25rem !important;
-            right: 1.25rem !important;
-            display: flex !important;
-            pointer-events: none !important;
-        }
-        .sc-badge, .sc-icon-btn { pointer-events: auto !important; }
-
-        .sc-bottom-content {
-            position: relative !important;
-            z-index: 2 !important;
-            margin-top: auto !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 0.5rem !important;
-        }
-
-        .sc-title-main { font-size: 1.5rem !important; }
-        .sc-desc { font-size: 0.85rem !important; }
-    }
     </style>
 
     <script src="script.js"></script>
 </body>
-</html>
 
+</html>

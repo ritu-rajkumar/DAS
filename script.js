@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
             setTimeout(() => {
                 mobileSplash.style.display = 'none';
-            }, 520);
-        }, 1800);
+            }, 320);
+        }, 650);
     } else if (mobileSplash) {
         mobileSplash.style.display = 'none';
     }
@@ -157,9 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const sheetCloseBtn    = document.getElementById('sheetCloseBtn');
     const dockMenuBtn      = document.getElementById('dockMenu');
     const sheetHomeLink    = document.getElementById('sheetHomeLink');
+    let sheetTrigger = null;
 
-    function openSheet() {
+    function openSheet(trigger = document.activeElement) {
         if (!bottomSheet) return;
+        sheetTrigger = trigger instanceof HTMLElement ? trigger : mobileMenuBtn;
+        bottomSheet.inert = false;
         bottomSheet.classList.add('is-open');
         bottomSheet.setAttribute('aria-hidden', 'false');
         if (sheetBackdrop) sheetBackdrop.classList.add('is-open');
@@ -168,20 +171,27 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.setAttribute('aria-expanded', 'true');
         }
         if (dockMenuBtn)   dockMenuBtn.classList.add('active');
+        document.body.classList.add('sheet-is-open');
         document.body.style.overflow = 'hidden';
+        window.requestAnimationFrame(() => sheetCloseBtn?.focus({ preventScroll: true }));
     }
 
-    function closeSheet() {
+    function closeSheet({ restoreFocus = true } = {}) {
         if (!bottomSheet) return;
         bottomSheet.classList.remove('is-open');
         bottomSheet.setAttribute('aria-hidden', 'true');
+        bottomSheet.inert = true;
         if (sheetBackdrop) sheetBackdrop.classList.remove('is-open');
         if (mobileMenuBtn) {
             mobileMenuBtn.classList.remove('is-active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
         }
         if (dockMenuBtn)   dockMenuBtn.classList.remove('active');
+        document.body.classList.remove('sheet-is-open');
         document.body.style.overflow = '';
+        if (restoreFocus && sheetTrigger instanceof HTMLElement) {
+            sheetTrigger.focus({ preventScroll: true });
+        }
     }
 
     // Toggle from header hamburger
@@ -190,14 +200,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (bottomSheet && bottomSheet.classList.contains('is-open')) {
                 closeSheet();
             } else {
-                openSheet();
+                openSheet(mobileMenuBtn);
             }
         });
     }
 
     // Open from dock Menu tab
     if (dockMenuBtn) {
-        dockMenuBtn.addEventListener('click', openSheet);
+        dockMenuBtn.addEventListener('click', () => openSheet(dockMenuBtn));
     }
 
     // Close via X button in sheet
@@ -211,9 +221,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && bottomSheet && bottomSheet.classList.contains('is-open')) {
+        if (!bottomSheet?.classList.contains('is-open')) return;
+
+        if (event.key === 'Escape') {
             closeSheet();
-            if (mobileMenuBtn) mobileMenuBtn.focus();
+            return;
+        }
+
+        if (event.key === 'Tab') {
+            const focusable = Array.from(bottomSheet.querySelectorAll('a[href], button:not([disabled])'));
+            if (!focusable.length) return;
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         }
     });
 
@@ -222,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sheetLinks = bottomSheet.querySelectorAll('a');
         sheetLinks.forEach(link => {
             link.addEventListener('click', () => {
-                setTimeout(closeSheet, 80);
+                closeSheet({ restoreFocus: false });
             });
         });
     }
@@ -243,6 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         services: document.getElementById('dockServices'),
         think:    document.getElementById('dockThink'),
     };
+    const sheetNavRows = Array.from(document.querySelectorAll('.sheet-nav-row[data-section]'));
 
     const sectionMap = [
         { id: 'heroSection',  tab: 'home' },
@@ -250,8 +278,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'what-we-do',   tab: 'services' },
     ];
 
-    function updateDockActive() {
-        if (window.innerWidth > 768) return;
+    function updateNavigationActive() {
+        if (window.innerWidth > 1024) return;
         let currentTab = 'home';
         const scrollY = window.scrollY + 100;
 
@@ -262,14 +290,42 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        Object.entries(dockTabs).forEach(([key, el]) => {
-            if (!el) return;
-            el.classList.toggle('active', key === currentTab);
+        if (window.innerWidth <= 768) {
+            Object.entries(dockTabs).forEach(([key, el]) => {
+                if (!el) return;
+                const isCurrent = key === currentTab;
+                el.classList.toggle('active', isCurrent);
+                if (isCurrent) el.setAttribute('aria-current', 'page');
+                else el.removeAttribute('aria-current');
+            });
+        }
+
+        let currentSheetRow = sheetNavRows[0] || null;
+        sheetNavRows.forEach(row => {
+            const section = document.getElementById(row.dataset.section);
+            if (section && section.offsetTop <= scrollY) currentSheetRow = row;
+        });
+
+        sheetNavRows.forEach(row => {
+            const isCurrent = row === currentSheetRow;
+            row.classList.toggle('is-current', isCurrent);
+            if (isCurrent) row.setAttribute('aria-current', 'page');
+            else row.removeAttribute('aria-current');
         });
     }
 
-    window.addEventListener('scroll', updateDockActive, { passive: true });
-    updateDockActive();
+    let navigationFrame = null;
+    const requestNavigationUpdate = () => {
+        if (navigationFrame !== null) return;
+        navigationFrame = window.requestAnimationFrame(() => {
+            navigationFrame = null;
+            updateNavigationActive();
+        });
+    };
+
+    window.addEventListener('scroll', requestNavigationUpdate, { passive: true });
+    window.addEventListener('resize', requestNavigationUpdate, { passive: true });
+    updateNavigationActive();
 
 
 
@@ -683,42 +739,207 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // Desktop attention section — lightweight scroll parallax
+// Particle headline: sampled letter pixels assemble into type, react to the
+// cursor, and burst outward when the warning button is pressed.
+(function initAttentionParticles() {
+    const canvas = document.getElementById('attentionParticleCanvas');
+    const headline = canvas?.closest('.particle-headline');
+    if (!canvas || !headline) return;
+
+    const context = canvas.getContext('2d', { alpha: true });
+    if (!context) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    const palette = ['#F15A3A', '#F15A3A', '#F15A3A', '#247AA8', '#247AA8', '#17212B'];
+    const pointer = { x: -9999, y: -9999 };
+    let particles = [];
+    let width = 1;
+    let height = 1;
+    let dpr = 1;
+    let particleSize = 2.4;
+    let animationFrame = null;
+    // Keep the particles at their scattered starting points until the
+    // headline actually reaches the viewport.
+    let inView = !('IntersectionObserver' in window);
+    let resizeTimer = null;
+
+    const draw = () => {
+        context.clearRect(0, 0, width, height);
+
+        particles.forEach(particle => {
+            if (!prefersReducedMotion) {
+                let accelerationX = (particle.targetX - particle.x) * 0.026;
+                let accelerationY = (particle.targetY - particle.y) * 0.026;
+
+                if (hasFinePointer) {
+                    const deltaX = particle.x - pointer.x;
+                    const deltaY = particle.y - pointer.y;
+                    const distanceSquared = (deltaX * deltaX) + (deltaY * deltaY);
+                    const radius = Math.min(112, Math.max(76, width * 0.14));
+
+                    if (distanceSquared < radius * radius) {
+                        const distance = Math.sqrt(distanceSquared) || 1;
+                        const influence = 1 - (distance / radius);
+                        const force = influence * influence * 5.6;
+                        accelerationX += (deltaX / distance) * force;
+                        accelerationY += (deltaY / distance) * force;
+                    }
+                }
+
+                particle.velocityX = (particle.velocityX + accelerationX) * 0.84;
+                particle.velocityY = (particle.velocityY + accelerationY) * 0.84;
+                particle.x += particle.velocityX;
+                particle.y += particle.velocityY;
+            } else {
+                particle.x = particle.targetX;
+                particle.y = particle.targetY;
+            }
+
+            context.fillStyle = particle.color;
+            context.fillRect(particle.x, particle.y, particleSize, particleSize);
+        });
+    };
+
+    const tick = () => {
+        animationFrame = null;
+        draw();
+        if (!prefersReducedMotion && inView) animationFrame = window.requestAnimationFrame(tick);
+    };
+
+    const start = () => {
+        if (animationFrame !== null || prefersReducedMotion || !inView) return;
+        animationFrame = window.requestAnimationFrame(tick);
+    };
+
+    const build = () => {
+        const bounds = headline.getBoundingClientRect();
+        width = Math.max(1, Math.round(bounds.width));
+        height = Math.max(1, Math.round(bounds.height));
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        context.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        const sampleCanvas = document.createElement('canvas');
+        sampleCanvas.width = width;
+        sampleCanvas.height = height;
+        const sampleContext = sampleCanvas.getContext('2d', { willReadFrequently: true });
+        if (!sampleContext) return;
+
+        const lines = ['IMPOSSIBLE', 'TO IGNORE.'];
+        const baseSize = 100;
+        sampleContext.font = `900 ${baseSize}px Anton, Impact, sans-serif`;
+        const widestLine = Math.max(...lines.map(line => sampleContext.measureText(line).width), 1);
+        const fontSize = Math.min((width * 0.99 / widestLine) * baseSize, height * 0.46);
+        const lineHeight = fontSize * 1.08;
+
+        sampleContext.clearRect(0, 0, width, height);
+        sampleContext.fillStyle = '#000';
+        sampleContext.textAlign = 'center';
+        sampleContext.textBaseline = 'middle';
+        sampleContext.font = `900 ${fontSize}px Anton, Impact, sans-serif`;
+        sampleContext.fillText(lines[0], width / 2, (height / 2) - (lineHeight / 2));
+        sampleContext.fillText(lines[1], width / 2, (height / 2) + (lineHeight / 2));
+
+        const pixels = sampleContext.getImageData(0, 0, width, height).data;
+        const step = Math.max(3, Math.min(5, Math.round(fontSize / 46)));
+        particleSize = Math.max(2.1, Math.min(3, fontSize / 57));
+        const targets = [];
+
+        for (let y = 0; y < height; y += step) {
+            for (let x = 0; x < width; x += step) {
+                if (pixels[((y * width) + x) * 4 + 3] > 128) targets.push({ x, y });
+            }
+        }
+
+        particles = targets.map((target, index) => {
+            const existing = particles[index];
+            const colorBand = Math.abs(Math.floor((target.x * 0.08) + (target.y * 0.13) + index)) % palette.length;
+            if (existing) {
+                existing.targetX = target.x;
+                existing.targetY = target.y;
+                existing.color = palette[colorBand];
+                return existing;
+            }
+
+            return {
+                x: Math.random() * width,
+                y: Math.random() * height,
+                targetX: target.x,
+                targetY: target.y,
+                velocityX: (Math.random() - 0.5) * 2,
+                velocityY: (Math.random() - 0.5) * 2,
+                color: palette[colorBand]
+            };
+        });
+
+        headline.classList.add('particles-ready');
+        draw();
+        start();
+    };
+
+    const burst = () => {
+        if (prefersReducedMotion) return;
+        const centerX = width / 2;
+        const centerY = height / 2;
+        particles.forEach(particle => {
+            const angle = Math.atan2(particle.y - centerY, particle.x - centerX) + ((Math.random() - 0.5) * 0.9);
+            const force = 14 + (Math.random() * 20);
+            particle.velocityX += Math.cos(angle) * force;
+            particle.velocityY += Math.sin(angle) * force;
+        });
+        start();
+    };
+
+    window.replayAttentionParticles = burst;
+
+    canvas.addEventListener('pointermove', event => {
+        const bounds = canvas.getBoundingClientRect();
+        pointer.x = event.clientX - bounds.left;
+        pointer.y = event.clientY - bounds.top;
+        start();
+    });
+
+    canvas.addEventListener('pointerleave', () => {
+        pointer.x = -9999;
+        pointer.y = -9999;
+    });
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => {
+            inView = Boolean(entries[0]?.isIntersecting);
+            if (inView) start();
+        }, window.innerWidth <= 768
+            ? { rootMargin: '0px', threshold: 0.2 }
+            : { rootMargin: '160px 0px', threshold: 0 });
+        observer.observe(headline);
+    }
+
+    const queueBuild = () => {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(build, 120);
+    };
+
+    if ('ResizeObserver' in window) new ResizeObserver(queueBuild).observe(headline);
+    else window.addEventListener('resize', queueBuild, { passive: true });
+
+    const initialize = () => window.requestAnimationFrame(build);
+    if (document.fonts?.load) document.fonts.load('900 100px Anton').then(initialize).catch(initialize);
+    else initialize();
+})();
+
 (function initAttentionParallax() {
     const section = document.querySelector('.manifesto-section');
     if (!section) return;
 
     const pushButton = document.getElementById('attentionPushButton');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const primaryLine = section.querySelector('.headline-primary');
-    const secondaryLine = section.querySelector('.headline-secondary');
-
-    const wrapCharacters = (element, startIndex) => {
-        if (!element || element.dataset.charactersWrapped === 'true') return element ? element.textContent.length : 0;
-        const text = element.textContent;
-        element.textContent = '';
-        Array.from(text).forEach((character, index) => {
-            const characterSpan = document.createElement('span');
-            characterSpan.className = `attention-char${character === ' ' ? ' attention-space' : ''}`;
-            characterSpan.style.setProperty('--char-index', String(startIndex + index));
-            characterSpan.textContent = character === ' ' ? '' : character;
-            element.appendChild(characterSpan);
-        });
-        element.dataset.charactersWrapped = 'true';
-        return text.length;
-    };
-
-    const primaryLength = wrapCharacters(primaryLine, 0);
-    wrapCharacters(secondaryLine, primaryLength + 5);
-
-    const replayWriting = () => {
-        section.classList.remove('attention-is-writing');
-        void section.offsetWidth;
-        section.classList.add('attention-is-writing');
-    };
-
     const revealAttention = () => {
         section.classList.add('attention-is-visible');
-        if (!prefersReducedMotion) replayWriting();
     };
 
     if ('IntersectionObserver' in window) {
@@ -734,9 +955,40 @@ document.addEventListener('DOMContentLoaded', () => {
         revealAttention();
     }
 
+    let impactTimer = null;
     if (pushButton) {
+        const calendlyUrl = 'https://calendly.com/digital-as/das-meeting';
+        const openCalendly = () => {
+            if (window.Calendly?.initPopupWidget) {
+                window.Calendly.initPopupWidget({ url: calendlyUrl });
+                return;
+            }
+
+            // Handle the rare case where the deferred Calendly script is still loading.
+            const calendlyScript = document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]');
+            calendlyScript?.addEventListener('load', openCalendly, { once: true });
+        };
+
         pushButton.addEventListener('click', () => {
-            if (!prefersReducedMotion) replayWriting();
+            window.clearTimeout(impactTimer);
+            section.classList.remove('attention-impact');
+            void section.offsetWidth;
+            section.classList.add('attention-impact');
+            pushButton.classList.add('is-pressed');
+
+            // Revert physical button state
+            window.setTimeout(() => pushButton.classList.remove('is-pressed'), 120);
+
+            // Clean up CSS impact state
+            impactTimer = window.setTimeout(() => section.classList.remove('attention-impact'), 520);
+
+            // Trigger particle burst
+            if (!prefersReducedMotion && typeof window.replayAttentionParticles === 'function') {
+                window.replayAttentionParticles();
+            }
+
+            // Open immediately; the feedback animation continues underneath the popup.
+            openCalendly();
         });
     }
 
@@ -848,18 +1100,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // FAQ Accordion
 (function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const btn = item.querySelector('.faq-question');
-        btn.addEventListener('click', () => {
-            // Close others (optional, remove if you want multiple open)
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item) {
-                    otherItem.classList.remove('active');
-                }
-            });
-            // Toggle current
-            item.classList.toggle('active');
+    const faqSection = document.querySelector('.faq-section');
+    const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+    const faqButtons = faqItems.map(item => item.querySelector('.faq-question')).filter(Boolean);
+    if (!faqSection || !faqItems.length) return;
+
+    const setItemState = (item, shouldOpen) => {
+        const button = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        item.classList.toggle('active', shouldOpen);
+        button?.setAttribute('aria-expanded', String(shouldOpen));
+        answer?.setAttribute('aria-hidden', String(!shouldOpen));
+    };
+
+    faqItems.forEach((item, index) => {
+        const button = item.querySelector('.faq-question');
+        if (!button) return;
+
+        button.addEventListener('click', () => {
+            const shouldOpen = !item.classList.contains('active');
+            faqItems.forEach(otherItem => setItemState(otherItem, otherItem === item && shouldOpen));
+        });
+
+        button.addEventListener('keydown', event => {
+            let targetIndex = null;
+            if (event.key === 'ArrowDown') targetIndex = (index + 1) % faqButtons.length;
+            if (event.key === 'ArrowUp') targetIndex = (index - 1 + faqButtons.length) % faqButtons.length;
+            if (event.key === 'Home') targetIndex = 0;
+            if (event.key === 'End') targetIndex = faqButtons.length - 1;
+            if (targetIndex === null) return;
+            event.preventDefault();
+            faqButtons[targetIndex].focus();
         });
     });
+
+    faqSection.classList.add('faq-enhanced');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const revealObserver = new IntersectionObserver(entries => {
+            if (!entries[0]?.isIntersecting) return;
+            faqSection.classList.add('is-visible');
+            revealObserver.disconnect();
+        }, { threshold: 0.16, rootMargin: '0px 0px -6%' });
+        revealObserver.observe(faqSection);
+    } else {
+        faqSection.classList.add('is-visible');
+    }
 })()
