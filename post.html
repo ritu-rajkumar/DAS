@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Insights from Digital Aastraa on design, technology and digital growth.">
+    <title>Journal | Digital Aastraa</title>
+    <link rel="icon" type="image/webp" href="assets/images/Logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css?v=20260901-compact3">
+    <link rel="stylesheet" href="assets/css/blog.css?v=20260901-center2">
+</head>
+<body class="page-blog page-post">
+    <div class="post-progress" aria-hidden="true"><span id="postProgressBar"></span></div>
+    <header class="site-header" id="siteHeader">
+        <div class="header-container">
+            <a href="index.html" class="logo" aria-label="Digital Aastraa Homepage">
+                <img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="logo-img">
+                <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
+                <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
+            </a>
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link" data-site-nav="home">Home</a></li>
+                    <li class="nav-item"><a href="index.html#what-we-do" class="nav-link" data-site-nav="services">Services</a></li>
+                    <li class="nav-item"><a href="index.html#industries" class="nav-link" data-site-nav="industries">Industries</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link active" data-site-nav="blog">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta-wrapper">
+                <a href="index.html#contact" class="nav-cta"><span>Free Digital Audit</span><svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="post-page">
+        <div class="post-shell">
+            <a class="post-back" href="blog.html">← Journal</a>
+
+            <div class="post-loading" id="postLoading" role="status">Loading article…</div>
+
+            <article id="postArticle" hidden>
+                <header class="post-header">
+                    <span class="blog-kicker" id="postCategory">DIGITAL AASTRAA JOURNAL</span>
+                    <h1 id="postTitle"></h1>
+                    <p class="post-excerpt" id="postExcerpt"></p>
+                    <div class="post-author-row">
+                        <span class="post-author-avatar" id="postAuthorAvatar">D</span>
+                        <div><strong id="postAuthor"></strong><small class="post-author-role" id="postAuthorRole" hidden></small><div class="post-meta"><span id="postDate"></span><span id="postReadTime"></span></div></div>
+                    </div>
+                </header>
+                <div class="post-cover post-cover-frame" id="postCoverFrame" hidden><img id="postCover" alt=""></div>
+                <div class="post-reading-layout">
+                    <aside class="post-share-rail" aria-label="Share article">
+                        <span>SHARE</span>
+                        <button type="button" id="copyPostLink" aria-label="Copy article link">↗</button>
+                        <a id="shareLinkedIn" href="#" target="_blank" rel="noopener" aria-label="Share on LinkedIn">in</a>
+                        <a id="shareX" href="#" target="_blank" rel="noopener" aria-label="Share on X">𝕏</a>
+                    </aside>
+                    <div class="post-content" id="postContent"></div>
+                    <aside class="post-side-recommendations" id="postSideRecommendations" hidden><span>KEEP READING</span><div id="postSideRecommendationList"></div></aside>
+                </div>
+                <div class="post-tags" id="postTags" hidden></div>
+                <footer class="post-author-card"><span class="post-author-avatar" id="postFooterAvatar">D</span><div><span>Written by</span><strong id="postFooterAuthor">Digital Aastraa</strong><small class="post-author-card-role" id="postFooterAuthorRole" hidden></small><p id="postFooterAuthorBio">Ideas on design, technology and building digital experiences that move brands forward.</p></div></footer>
+            </article>
+
+            <div class="post-error" id="postError" hidden>
+                <div>
+                    <span class="blog-kicker">404 / JOURNAL</span>
+                    <h1>We couldn’t find that story.</h1>
+                    <p>The article may be unpublished or the link may have changed.</p>
+                    <a class="blog-read-link" href="blog.html">Return to the journal →</a>
+                </div>
+            </div>
+        </div>
+        <section class="related-posts" id="relatedPostsSection" hidden>
+            <div class="related-posts-head"><span>KEEP READING</span><h2>More from the journal</h2></div>
+            <div class="related-posts-grid" id="relatedPosts"></div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo"><img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="footer-logo-img" width="2048" height="768" loading="lazy" decoding="async"></a>
+                    <p class="footer-tagline">We turn bold ideas into high-performing digital products & scalable growth engines.</p>
+                    <div class="footer-contact-info">
+                        <a href="mailto:hello@digitalaastraa.com" class="footer-contact-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>hello@digitalaastraa.com</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-nav-grid">
+                    <div class="f-col">
+                        <h4 class="f-title">NAVIGATION</h4>
+                        <ul class="f-list">
+                            <li><a href="index.html"><span aria-hidden="true">›</span> Home</a></li>
+                            <li><a href="index.html#manifesto"><span aria-hidden="true">›</span> What We Think</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> Services</a></li>
+                            <li><a href="index.html#process"><span aria-hidden="true">›</span> How We Work</a></li>
+                            <li><a href="index.html#industries"><span aria-hidden="true">›</span> Industries</a></li>
+                        </ul>
+                    </div>
+                    <div class="f-col">
+                        <h4 class="f-title">OUR SERVICES</h4>
+                        <ul class="f-list">
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> Web Development</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> App Development</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> Custom Software</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> Performance Marketing</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> SEO & Organic Growth</a></li>
+                            <li><a href="index.html#what-we-do"><span aria-hidden="true">›</span> Automation Systems</a></li>
+                        </ul>
+                    </div>
+                    <div class="f-col">
+                        <h4 class="f-title">CONNECT</h4>
+                        <div class="f-social-icons">
+                            <a href="https://www.instagram.com/digital_aastraasolution/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                            </a>
+                            <a href="https://www.facebook.com/aastraasolution" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span class="f-copy">© 2026 DIGITAL AASTRAA. All rights reserved.</span>
+                <div class="f-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shared mobile bottom navigation -->
+    <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Mobile Navigation">
+        <a href="index.html" class="dock-tab" id="dockHome" data-site-nav="home" aria-label="Home">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <span class="dock-label">Home</span><span class="dock-active-pip"></span>
+        </a>
+        <a href="index.html#what-we-do" class="dock-tab" id="dockServices" data-site-nav="services" aria-label="Services">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <span class="dock-label">Services</span><span class="dock-active-pip"></span>
+        </a>
+        <a href="index.html#contact" class="dock-tab dock-tab-cta" id="dockAudit" aria-label="Free Audit">
+            <div class="dock-cta-inner"><svg class="dock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+            <span class="dock-label">Audit</span>
+        </a>
+        <a href="index.html#industries" class="dock-tab" id="dockIndustries" data-site-nav="industries" aria-label="Industries">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20V7"/></svg>
+            <span class="dock-label">Industries</span><span class="dock-active-pip"></span>
+        </a>
+        <a href="blog.html" class="dock-tab" id="dockBlog" data-site-nav="blog" aria-label="Blog">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h10l4 4v14H5z"/><path d="M15 3v5h5M8 12h8M8 16h6"/></svg>
+            <span class="dock-label">Blog</span><span class="dock-active-pip"></span>
+        </a>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4"
+        integrity="sha384-yiVMs0R/Jyz7OhoXa/DsEMUSBLjEhr/QJta2ONO+zB6I8/GmNg/7AUFrZmAJV7KV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.14/dist/purify.min.js"
+        integrity="sha384-46dPGH1XlTmj7bc50bqLjTdORXs/3EP2QpA/6EWbelYWOY9VGp+87RT61S3Mcslb"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/audit-modal.js?v=20260902-security1"></script>
+    <script src="assets/js/contact-supabase.js?v=20260902-security1"></script>
+    <script src="assets/js/blog-renderer.js?v=20260830-cropeditor"></script>
+    <script src="assets/js/post.js?v=20260830-cropeditor"></script>
+    <script src="assets/js/script.js?v=20260901-premium2"></script>
+</body>
+</html>

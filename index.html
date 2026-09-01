@@ -7,6 +7,7 @@
     <title>Digital Aastraa / Full-Service Growth, Build & Design Agency</title>
     <meta name="description"
         content="Digital Aastraa is a full-service agency crafting exceptional websites, custom digital platforms, and growth ad engines for ambitious brands.">
+    <link rel="icon" type="image/webp" href="assets/images/Logo.webp">
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
@@ -25,20 +26,17 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Dancing+Script:wght@500;600;700&family=DotGothic16&family=Instrument+Serif:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
         rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@1.39.0/dist/umd/lucide.min.js"
+        integrity="sha384-ueMZWsJB99p1SCMICHGDK/IL9ZKGuI1twYOPLoFlYI0sDz25ILSwq6W82/LsYvlt"
+        crossorigin="anonymous"></script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css?v=20260901-premium6">
 
-    <!-- Calendly link widget begin -->
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
-    <link rel="preconnect" href="https://calendly.com">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" defer></script>
-    <!-- Calendly link widget end -->
 </head>
 
-<body>
+<body class="page-home">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8BPH4C8" height="0" width="0"
@@ -48,7 +46,7 @@
     <!-- ===== MOBILE SPLASH / PAGE LOAD ANIMATION ===== -->
     <div class="mobile-splash" id="mobileSplash">
         <div class="splash-inner">
-            <img src="Asset/Logo.png" alt="Digital Aastraa" class="splash-logo">
+            <img src="assets/images/Logo.webp" alt="Digital Aastraa" class="splash-logo">
             <div class="splash-bars">
                 <span class="splash-bar"></span>
                 <span class="splash-bar"></span>
@@ -67,7 +65,7 @@
         <div class="header-container">
             <!-- Logo -->
             <a href="#" class="logo" aria-label="Digital Aastraa Homepage">
-                <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="logo-img">
+                <img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="logo-img">
                 <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
                 <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
             </a>
@@ -76,16 +74,16 @@
             <nav class="desktop-nav" aria-label="Main Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
+                        <a href="index.html" class="nav-link" data-site-nav="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#what-we-do" class="nav-link">Services</a>
+                        <a href="index.html#what-we-do" class="nav-link" data-site-nav="services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#work" class="nav-link">Work</a>
+                        <a href="index.html#industries" class="nav-link" data-site-nav="industries">Industries</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link">Blog</a>
+                        <a href="blog.html" class="nav-link" data-site-nav="blog">Blog</a>
                     </li>
                 </ul>
             </nav>
@@ -94,149 +92,12 @@
             <div class="header-cta-wrapper">
                 <a href="#contact" class="nav-cta">
                     <span>Free Digital Audit</span>
-                    <i data-lucide="arrow-right" class="cta-arrow"></i>
+                    <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu"
-                    aria-controls="mobileMenuOverlay" aria-expanded="false">
-                    <span class="mob-bar mob-bar-1"></span>
-                    <span class="mob-bar mob-bar-2"></span>
-                    <span class="mob-bar mob-bar-3"></span>
-                </button>
             </div>
         </div>
     </header>
-
-    <!-- ================= BOTTOM SHEET BACKDROP ================= -->
-    <div class="sheet-backdrop" id="sheetBackdrop"></div>
-
-    <!-- ================= MOBILE BOTTOM SHEET MENU ================= -->
-    <div class="mobile-bottom-sheet" id="mobileMenuOverlay" role="dialog" aria-modal="true"
-        aria-label="Mobile navigation" aria-hidden="true" inert>
-        <!-- Drag Handle -->
-        <div class="sheet-drag-handle"></div>
-
-        <!-- Sheet Header -->
-        <div class="sheet-header">
-            <div class="sheet-brand" aria-label="Digital Aastraa Solution">
-                <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="sheet-logo">
-                <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
-                <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
-            </div>
-            <button class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close menu">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-            </button>
-        </div>
-
-        <!-- Clean mobile navigation -->
-        <nav class="sheet-nav">
-            <a href="#" class="sheet-nav-row" id="sheetHomeLink" data-section="heroSection" aria-current="page">
-                <span class="snr-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m3 10 9-7 9 7" />
-                        <path d="M5 9v11h14V9M9 20v-7h6v7" />
-                    </svg>
-                </span>
-                <span class="snr-index">01</span>
-                <div class="snr-text">
-                    <span class="snr-label">Home</span>
-                    <span class="snr-sub">Back to the beginning</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                </svg>
-            </a>
-            <a href="#what-we-do" class="sheet-nav-row" data-section="what-we-do">
-                <span class="snr-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7" rx="2" />
-                        <rect x="14" y="3" width="7" height="7" rx="2" />
-                        <rect x="3" y="14" width="7" height="7" rx="2" />
-                        <rect x="14" y="14" width="7" height="7" rx="2" />
-                    </svg>
-                </span>
-                <span class="snr-index">02</span>
-                <div class="snr-text">
-                    <span class="snr-label">Services</span>
-                    <span class="snr-sub">Four connected capabilities</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                </svg>
-            </a>
-            <a href="#process" class="sheet-nav-row" data-section="process">
-                <span class="snr-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="6" cy="6" r="2" />
-                        <circle cx="18" cy="18" r="2" />
-                        <path d="M8 6h5a3 3 0 0 1 3 3v1M16 14v-1a3 3 0 0 0-3-3H8" />
-                    </svg>
-                </span>
-                <span class="snr-index">03</span>
-                <div class="snr-text">
-                    <span class="snr-label">How We Work</span>
-                    <span class="snr-sub">A focused five-step process</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                </svg>
-            </a>
-            <a href="#stand-out" class="sheet-nav-row" data-section="stand-out">
-                <span class="snr-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 5h16v14H4z" />
-                        <path d="m4 15 4-4 3 3 3-3 6 6" />
-                        <circle cx="16.5" cy="8.5" r="1.5" />
-                    </svg>
-                </span>
-                <span class="snr-index">04</span>
-                <div class="snr-text">
-                    <span class="snr-label">Our Work</span>
-                    <span class="snr-sub">Ideas designed to stand out</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                </svg>
-            </a>
-            <a href="blog.html" class="sheet-nav-row">
-                <span class="snr-icon-wrap" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 3h10l4 4v14H5z" />
-                        <path d="M15 3v5h5M8 12h8M8 16h6" />
-                    </svg>
-                </span>
-                <span class="snr-index">05</span>
-                <div class="snr-text">
-                    <span class="snr-label">Blog</span>
-                    <span class="snr-sub">Ideas, updates and insights</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                </svg>
-            </a>
-        </nav>
-
-        <!-- Sheet CTA -->
-        <div class="sheet-footer">
-            <a href="#contact" class="sheet-cta-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                </svg>
-                BOOK FREE AUDIT
-            </a>
-            <a href="mailto:hello@digitalaastraa.com" class="sheet-email-link">hello@digitalaastraa.com</a>
-        </div>
-    </div>
 
     <!-- ================= HERO SECTION (GETNUGGET STYLE) ================= -->
     <section class="hero-section" id="heroSection">
@@ -254,13 +115,33 @@
                 </div>
             </h1>
 
+            <!-- Transparent interactive spider web (desktop: right side, mobile: inline) -->
+            <div class="hero-spider-visual" id="heroSpiderVisual">
+                <svg class="hero-spider-nav-web" viewBox="0 0 120 96" preserveAspectRatio="none" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-linecap="round">
+                        <path class="hero-spider-nav-web__rope" d="M60 0C52 28 69 60 60 96" />
+                        <path d="M4 0Q28 42 60 96" />
+                        <path d="M28 0Q42 49 60 96" />
+                        <path d="M92 0Q78 49 60 96" />
+                        <path d="M116 0Q92 42 60 96" />
+                        <path d="M15 24Q60 43 105 24" />
+                        <path d="M28 49Q60 64 92 49" />
+                        <path d="M43 73Q60 82 77 73" />
+                    </g>
+                </svg>
+                <canvas id="heroSpiderCanvas" class="hero-spider-canvas" tabindex="0" role="img"
+                    aria-label="Interactive animated spider on a web. Drag the spider and release it to let it crawl back onto the web.">
+                    Animated spider building a web.
+                </canvas>
+            </div>
+
             <!-- Bottom Content Row: Left Subtitle & Right Pill CTA -->
             <div class="hero-bottom-row">
                 <div class="hero-subtitle-col">
                     <p class="hero-subtitle">
-                        A full-service digital agency crafting exceptional websites and high-converting products for
-                        <strong class="text-highlight-bold">ambitious brands</strong>. We transform your vision into
-                        <strong class="text-highlight-orange">digital reality</strong>.
+                        Helping businesses generate more <strong class="text-highlight-bold">enquiries, bookings &amp;
+                            sales</strong> through Google, Meta, websites and <strong
+                            class="text-highlight-orange">WhatsApp</strong>.
                     </p>
                 </div>
                 <div class="hero-cta-col">
@@ -293,7 +174,7 @@
 
             <!-- Mobile GIF (visible only on mobile, replaces static image) -->
             <div class="manifesto-mobile-gif">
-                <img src="Asset/Spoltlight .gif" alt="Spotlight Effect" class="manifesto-gif-img">
+                <img src="assets/images/Mobile version Standout.webp" alt="Stand out spotlight artwork" class="manifesto-gif-img" width="1122" height="1402" loading="lazy" decoding="async">
             </div>
 
             <div class="manifesto-grid">
@@ -315,7 +196,7 @@
                         </div>
 
                         <div class="attention-machine attention-machine-image">
-                            <img src="Asset/Alert Button.png" alt="" aria-hidden="true" draggable="false">
+                            <img src="assets/images/Alert Button.webp" alt="" aria-hidden="true" draggable="false" width="1122" height="1402" loading="lazy" decoding="async">
                             <button class="attention-push-button attention-image-hotspot" id="attentionPushButton"
                                 type="button" aria-label="Don't press this button"></button>
                         </div>
@@ -354,12 +235,12 @@
             </div>
 
             <div class="capabilities-list">
-                <article class="capability-row">
+                <article class="capability-row capability-performance">
                     <span class="capability-index">01</span>
                     <div class="capability-title">
                         <h3>Performance Marketing</h3>
                     </div>
-                    <p>Advertising campaigns built to reach the right people and create measurable sales.</p>
+                    <p>Turn Your Ad Budget Into Real Business.</p>
                     <button class="capability-toggle" type="button" aria-expanded="false"
                         aria-label="Show Performance Marketing details"><svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="m6 9 6 6 6-6" />
@@ -367,16 +248,17 @@
                     <div class="capability-details">
                         <div class="capability-details-inner">
                             <div class="capability-detail-copy">
-                                <p>We plan, launch and improve your advertising across Meta and Google. Every campaign
-                                    is tracked clearly, so you know what is bringing enquiries and sales.</p>
+                                <p>We put your business in front of people who are most likely to buy, enquire, or take
+                                    action — then continuously improve what’s working to get you more results from
+                                    every rupee you spend.</p>
                             </div>
                             <ul>
-                                <li>Meta, Google and paid advertising</li>
-                                <li>Tracking, retargeting and optimisation</li>
-                                <li>Simple reports focused on results</li>
+                                <li>Targeted ads on Google &amp; Meta</li>
+                                <li>Smart tracking &amp; retargeting</li>
+                                <li>Continuous optimisation for better results</li>
                             </ul>
                             <a class="service-cta" href="#contact" data-service-value="performance-marketing"><span
-                                    class="service-cta-label">Discuss your growth goals</span><span
+                                    class="service-cta-label">Start Growing With Ads</span><span
                                     class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
                                         <path d="M5 12h14M13 6l6 6-6 6" />
                                     </svg></span></a>
@@ -384,12 +266,12 @@
                     </div>
                 </article>
 
-                <article class="capability-row">
+                <article class="capability-row capability-brand">
                     <span class="capability-index">02</span>
                     <div class="capability-title">
                         <h3>Branding, Creative & Social Media</h3>
                     </div>
-                    <p>A complete brand and social presence, planned, created and managed by one team.</p>
+                    <p>Look Professional. Stay Remembered.</p>
                     <button class="capability-toggle" type="button" aria-expanded="false"
                         aria-label="Show Branding, Creative and Social Media details"><svg viewBox="0 0 24 24"
                             aria-hidden="true">
@@ -398,16 +280,16 @@
                     <div class="capability-details">
                         <div class="capability-details-inner">
                             <div class="capability-detail-copy">
-                                <p>We define your brand style and manage your social media month after month—from
-                                    planning ideas to publishing content and responding to your audience.</p>
+                                <p>From your brand identity to your daily social content, we make sure your business
+                                    looks consistent, communicates clearly, and stays in front of your audience.</p>
                             </div>
                             <ul>
-                                <li>Brand identity and content direction</li>
-                                <li>Posts, reels, captions and publishing</li>
-                                <li>Community management and monthly reports</li>
+                                <li>Branding</li>
+                                <li>Creative Content</li>
+                                <li>Social Media Management</li>
                             </ul>
                             <a class="service-cta" href="#contact" data-service-value="brand-social"><span
-                                    class="service-cta-label">Build your brand presence</span><span
+                                    class="service-cta-label">Make My Brand Stand Out</span><span
                                     class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
                                         <path d="M5 12h14M13 6l6 6-6 6" />
                                     </svg></span></a>
@@ -415,12 +297,12 @@
                     </div>
                 </article>
 
-                <article class="capability-row">
+                <article class="capability-row capability-technology">
                     <span class="capability-index">03</span>
                     <div class="capability-title">
                         <h3>Websites, Apps & Software</h3>
                     </div>
-                    <p>Clear, fast digital products that make your business easier to use and easier to grow.</p>
+                    <p>Your Idea. Our Technology. Built for Reality.</p>
                     <button class="capability-toggle" type="button" aria-expanded="false"
                         aria-label="Show Web and Digital Experiences details"><svg viewBox="0 0 24 24"
                             aria-hidden="true">
@@ -429,16 +311,17 @@
                     <div class="capability-details">
                         <div class="capability-details-inner">
                             <div class="capability-detail-copy">
-                                <p>From a high-converting website to a custom app or business software, we handle the
-                                    structure, design, development and launch in one connected process.</p>
+                                <p>Got an idea but don’t know where to start?</p>
+                                <p>We turn your idea into a working website, app or software — from the first concept
+                                    to the final launch.</p>
                             </div>
                             <ul>
-                                <li>Websites and conversion-focused landing pages</li>
-                                <li>Web and mobile applications</li>
-                                <li>Custom software and integrations</li>
+                                <li>Think it.</li>
+                                <li>Build it.</li>
+                                <li>Launch it.</li>
                             </ul>
                             <a class="service-cta" href="#contact" data-service-value="web-digital"><span
-                                    class="service-cta-label">Plan your digital product</span><span
+                                    class="service-cta-label">Bring My Idea to Life</span><span
                                     class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
                                         <path d="M5 12h14M13 6l6 6-6 6" />
                                     </svg></span></a>
@@ -446,12 +329,12 @@
                     </div>
                 </article>
 
-                <article class="capability-row">
+                <article class="capability-row capability-automation">
                     <span class="capability-index">04</span>
                     <div class="capability-title">
                         <h3>AI & Automation</h3>
                     </div>
-                    <p>Connected workflows that reduce manual work and help your team respond faster.</p>
+                    <p>Stop Doing Manually What Technology Can Do For You.</p>
                     <button class="capability-toggle" type="button" aria-expanded="false"
                         aria-label="Show AI and Automation details"><svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="m6 9 6 6 6-6" />
@@ -459,21 +342,92 @@
                     <div class="capability-details">
                         <div class="capability-details-inner">
                             <div class="capability-detail-copy">
-                                <p>We connect your tools and automate repetitive steps so leads move forward without
-                                    delay. The result is fewer missed follow-ups and more time for valuable work.</p>
+                                <p>Too much repetitive work? Missing leads or follow-ups?</p>
+                                <p>We connect your tools and use AI + automation to handle the work automatically — so
+                                    your team saves time, responds faster, and focuses on what actually grows the
+                                    business.</p>
                             </div>
                             <ul>
-                                <li>CRM and lead workflows</li>
-                                <li>Email and WhatsApp follow-ups</li>
-                                <li>AI tools, browser extensions and integrations</li>
+                                <li>Automate the Work</li>
+                                <li>Capture Every Lead</li>
+                                <li>Save Time</li>
                             </ul>
                             <a class="service-cta" href="#contact" data-service-value="ai-automation"><span
-                                    class="service-cta-label">Automate your workflow</span><span
+                                    class="service-cta-label">Automate My Business</span><span
                                     class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24">
                                         <path d="M5 12h14M13 6l6 6-6 6" />
                                     </svg></span></a>
                         </div>
                     </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= INDUSTRIES ================= -->
+    <section class="industries-section" id="industries">
+        <div class="industries-container">
+            <header class="industries-intro">
+                <h2>Built for businesses<br><span>ready to grow.</span></h2>
+                <p>Focused digital systems for the industries where visibility, trust and timely follow-up turn into
+                    real enquiries, visits and bookings.</p>
+            </header>
+
+            <div class="industries-grid">
+                <article class="industry-card industry-card--real-estate industry-card--featured">
+                    <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg></span>
+                    <span class="industry-number">01</span>
+                    <h3>Real Estate</h3>
+                    <h4>Turn Property Searches Into Site Visits.</h4>
+                    <p>Generate quality property leads and follow up with prospects automatically.</p>
+                    <a href="#contact" class="service-cta industry-cta" data-service-value="real-estate" aria-label="Generate more property leads"><span class="service-cta-label">Generate Property Leads</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
+                </article>
+
+                <div class="industry-pair">
+                    <article class="industry-card industry-card--education">
+                        <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 10 9-5 9 5-9 5-9-5Z"/><path d="M7 12.2V17c2.6 2 7.4 2 10 0v-4.8M21 10v6"/></svg></span>
+                        <span class="industry-number">02</span>
+                        <h3>Education &amp; Coaching</h3>
+                        <h4>More Enquiries. More Admissions.</h4>
+                        <p>Reach students and parents who are actively looking for the right course, coaching or institute.</p>
+                        <a href="#contact" class="service-cta industry-cta" data-service-value="education-coaching" aria-label="Grow student admissions"><span class="service-cta-label">Grow Admissions</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
+                    </article>
+                    <article class="industry-card industry-card--healthcare">
+                        <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-8-4.8-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.2-8 11-8 11Z"/><path d="M9 12h6M12 9v6"/></svg></span>
+                        <span class="industry-number">03</span>
+                        <h3>Healthcare &amp; Clinics</h3>
+                        <h4>Be Found When People Need You.</h4>
+                        <p>Build local visibility and turn searches into appointment enquiries and calls.</p>
+                        <a href="#contact" class="service-cta industry-cta" data-service-value="healthcare-clinics" aria-label="Get more patient bookings"><span class="service-cta-label">Get More Bookings</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
+                    </article>
+                </div>
+
+                <div class="industry-pair">
+                    <article class="industry-card industry-card--showroom">
+                        <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 16 1-5h12l1 5M7 11l2-4h6l2 4"/><path d="M4 16h16v3H4zM7 19v2M17 19v2"/></svg></span>
+                        <span class="industry-number">04</span>
+                        <h3>Showrooms &amp; Dealerships</h3>
+                        <h4>Bring More Buyers to Your Showroom.</h4>
+                        <p>Get your vehicles and offers in front of the right buyers and turn enquiries into visits.</p>
+                        <a href="#contact" class="service-cta industry-cta" data-service-value="showrooms-dealerships" aria-label="Drive more showroom visits"><span class="service-cta-label">Drive Showroom Visits</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
+                    </article>
+                    <article class="industry-card industry-card--local">
+                        <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 10h16l-2-6H6l-2 6Z"/><path d="M5 10v10h14V10M9 20v-6h6v6"/><path d="M4 10c0 2 3 2 4 0 1 2 3 2 4 0 1 2 3 2 4 0 1 2 4 2 4 0"/></svg></span>
+                        <span class="industry-number">05</span>
+                        <h3>Local Businesses &amp; Retail</h3>
+                        <h4>Get Discovered. Get Chosen. Get Customers.</h4>
+                        <p>Build a stronger local presence and bring more people from online searches and social media to your business.</p>
+                        <a href="#contact" class="service-cta industry-cta" data-service-value="local-business-retail" aria-label="Win more local customers"><span class="service-cta-label">Win Local Customers</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
+                    </article>
+                </div>
+
+                <article class="industry-card industry-card--hospitality industry-card--closing">
+                    <span class="industry-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13h16M6 13a6 6 0 0 1 12 0M12 7V5M3 17h18"/><path d="M5 17v3M19 17v3"/></svg></span>
+                    <span class="industry-number">06</span>
+                    <h3>Restaurants &amp; Hospitality</h3>
+                    <h4>More Bookings. More Walk-ins. More Visibility.</h4>
+                    <p>Put your business in front of hungry, ready-to-visit customers at the right moment.</p>
+                    <a href="#contact" class="service-cta industry-cta" data-service-value="restaurants-hospitality" aria-label="Fill more tables and rooms"><span class="service-cta-label">Fill More Tables</span><span class="service-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></svg></span></a>
                 </article>
             </div>
         </div>
@@ -900,8 +854,8 @@
 
             <!-- Real PNG background image -->
             <picture>
-                <source media="(max-width: 768px)" srcset="Asset/Mobile%20version%20Standout.png">
-                <img src="Asset/Stand out.png" alt="Stand Out" class="standout-bg-img" id="standoutBgImg">
+                <source media="(max-width: 768px)" srcset="assets/images/Mobile%20version%20Standout.png">
+                <img src="assets/images/Stand out.webp" alt="Stand Out" class="standout-bg-img" id="standoutBgImg" width="1942" height="809" loading="lazy" decoding="async">
             </picture>
 
             <!-- Right-side subtle overlay for text readability -->
@@ -935,83 +889,18 @@
         </div>
     </section>
 
-    <!-- ================= CONTACT SECTION ================= -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <div class="contact-left">
-                <h2 class="contact-heading">Let's build the<br>future together</h2>
-            </div>
-            <div class="contact-right">
-                <form class="contact-form">
-                    <div class="form-group full-width">
-                        <label class="form-label" for="contact-name">Name (required)</label>
-                    </div>
-                    <div class="form-group full-width">
-                        <input type="text" id="contact-name" name="name" class="form-input" placeholder="Name" required
-                            aria-required="true">
-                    </div>
-
-                    <div class="form-group full-width mt-1">
-                        <input type="tel" id="contact-phone" name="phone" class="form-input"
-                            placeholder="Phone Number (required)" required aria-required="true" pattern="[0-9]*"
-                            minlength="10">
-                        <small class="mobile-phone-note"
-                            style="display: block; font-size: 0.75rem; color: #a0a0a0; margin-top: 5px; opacity: 0.8;">make
-                            sure your contact number is correct</small>
-                    </div>
-
-                    <div class="form-group full-width mt-1">
-                        <input type="email" id="contact-email" name="email" class="form-input"
-                            placeholder="Email (required)" required aria-required="true">
-                    </div>
-
-                    <div class="form-group full-width mt-1">
-                        <div class="custom-select-wrapper">
-                            <select class="form-input select-input" id="serviceInterest" name="service" required
-                                aria-required="true">
-                                <option value="" disabled selected>Service (required)</option>
-                                <option value="performance-marketing">Performance Marketing</option>
-                                <option value="brand-social">Branding, Creative & Social Media</option>
-                                <option value="web-digital">Web & Digital Experiences</option>
-                                <option value="ai-automation">AI & Automation</option>
-                                <option value="other-service">Other (not listed here)</option>
-                            </select>
-                            <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-
-                    <div class="form-checkbox">
-                        <input type="checkbox" id="newsletter" name="newsletter">
-                        <label for="newsletter">Sign up for news and updates</label>
-                    </div>
-
-                    <div class="form-group full-width mt-1">
-                        <textarea id="contact-project" name="project_description" class="form-input" rows="3"
-                            placeholder="Project description" style="resize: vertical; min-height: 80px;"></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- ================= FAQ SECTION ================= -->
     <section class="faq-section" id="faqs">
         <div class="faq-container">
             <div class="faq-header">
-                <span class="faq-eyebrow">FAQS</span>
                 <h2 class="faq-heading">Questions?<br>We have answers.</h2>
                 <p class="faq-intro">Clear answers about our services, timelines, pricing and the way we work with
                     growing businesses.</p>
             </div>
 
             <div class="faq-list">
-                <div class="faq-item">
-                    <button class="faq-question" id="faq-question-1" type="button" aria-expanded="false"
+                <div class="faq-item active">
+                    <button class="faq-question" id="faq-question-1" type="button" aria-expanded="true"
                         aria-controls="faq-answer-1">
                         <span>What is Digital Aastraa Solution?</span>
                         <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -1020,7 +909,7 @@
                         </svg>
                     </button>
                     <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"
-                        aria-hidden="true">
+                        aria-hidden="false">
                         <div class="faq-answer-inner">
                             <p>Digital Aastraa Solution is a full-service growth, design and technology agency. We bring
                                 strategy, creative, development, paid growth and automation together in one team, so
@@ -1142,6 +1031,17 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="faq-contact-card">
+                    <div>
+                        <span>Still have a question?</span>
+                        <strong>Let’s talk about your business.</strong>
+                    </div>
+                    <a href="#contact" class="faq-contact-cta">
+                        <span>Ask Us Directly</span>
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1153,7 +1053,7 @@
                 <!-- Brand Column -->
                 <div class="footer-brand-col">
                     <a href="#" class="footer-logo">
-                        <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="footer-logo-img">
+                        <img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="footer-logo-img" width="2048" height="768" loading="lazy" decoding="async">
                     </a>
                     <p class="footer-tagline">We turn bold ideas into high-performing digital products & scalable growth
                         engines.</p>
@@ -1192,10 +1092,10 @@
                                         stroke="currentColor" stroke-width="2">
                                         <polyline points="9 18 15 12 9 6" />
                                     </svg> How We Work</a></li>
-                            <li><a href="#stand-out"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            <li><a href="#industries"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="2">
                                         <polyline points="9 18 15 12 9 6" />
-                                    </svg> Stand Out</a></li>
+                                    </svg> Industries</a></li>
                         </ul>
                     </div>
 
@@ -1235,7 +1135,7 @@
                         <h4 class="f-title">CONNECT</h4>
                         <div class="f-social-icons">
                             <a href="https://www.instagram.com/digital_aastraasolution/" target="_blank"
-                                class="social-icon-btn" aria-label="Instagram">
+                                rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -1243,8 +1143,8 @@
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                                 </svg>
                             </a>
-                            <a href="https://www.facebook.com/aastraasolution" target="_blank" class="social-icon-btn"
-                                aria-label="Facebook">
+                            <a href="https://www.facebook.com/aastraasolution" target="_blank"
+                                rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
@@ -1279,7 +1179,7 @@
 
     <!-- ================= MOBILE BOTTOM NAVIGATION DOCK ================= -->
     <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Mobile Navigation">
-        <a href="#" class="dock-tab active" id="dockHome" aria-label="Home">
+        <a href="index.html" class="dock-tab" id="dockHome" data-site-nav="home" aria-label="Home">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -1288,17 +1188,16 @@
             <span class="dock-label">Home</span>
             <span class="dock-active-pip"></span>
         </a>
-        <a href="#manifesto" class="dock-tab" id="dockThink" aria-label="What We Think">
+        <a href="index.html#what-we-do" class="dock-tab" id="dockServices" data-site-nav="services" aria-label="Services">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
             </svg>
-            <span class="dock-label">Think</span>
+            <span class="dock-label">Services</span>
             <span class="dock-active-pip"></span>
         </a>
-        <a href="#contact" class="dock-tab dock-tab-cta" id="dockAudit" aria-label="Free Audit">
+        <a href="index.html#contact" class="dock-tab dock-tab-cta" id="dockAudit" aria-label="Free Audit">
             <div class="dock-cta-inner">
                 <svg class="dock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2.2">
@@ -1308,25 +1207,23 @@
             </div>
             <span class="dock-label">Audit</span>
         </a>
-        <a href="#what-we-do" class="dock-tab" id="dockServices" aria-label="Services">
+        <a href="index.html#industries" class="dock-tab" id="dockIndustries" data-site-nav="industries" aria-label="Industries">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
+                <path d="M4 20V10M10 20V4M16 20v-7M22 20V7" />
             </svg>
-            <span class="dock-label">Services</span>
+            <span class="dock-label">Industries</span>
             <span class="dock-active-pip"></span>
         </a>
-        <button class="dock-tab" id="dockMenu" aria-label="Menu">
+        <a href="blog.html" class="dock-tab" id="dockBlog" data-site-nav="blog" aria-label="Blog">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="18" x2="21" y2="18" />
+                <path d="M5 3h10l4 4v14H5z" />
+                <path d="M15 3v5h5M8 12h8M8 16h6" />
             </svg>
-            <span class="dock-label">Menu</span>
+            <span class="dock-label">Blog</span>
             <span class="dock-active-pip"></span>
-        </button>
+        </a>
     </nav>
 
     <!-- FINAL TAB BAR FIX - inline wins over all stylesheets -->
@@ -1538,7 +1435,14 @@
         }
     </style>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4"
+        integrity="sha384-yiVMs0R/Jyz7OhoXa/DsEMUSBLjEhr/QJta2ONO+zB6I8/GmNg/7AUFrZmAJV7KV"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/audit-modal.js?v=20260902-security1"></script>
+    <script src="assets/js/contact-supabase.js?v=20260902-security1"></script>
+    <script src="assets/js/hero-spider.js?v=12"></script>
+    <script src="assets/js/script.js?v=20260901-premium2"></script>
 </body>
 
 </html>

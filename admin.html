@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Admin Studio | Digital Aastraa</title>
+    <link rel="icon" type="image/webp" href="assets/images/Logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/blog.css?v=20260830-cropeditor">
+    <link rel="stylesheet" href="assets/css/admin.css?v=20260901-enquiry-types">
+</head>
+<body>
+    <div class="admin-boot" id="adminBoot" role="status" aria-live="polite"><span></span><p>Opening Editorial Studio…</p></div>
+    <main class="admin-auth" id="adminAuth" hidden>
+        <div class="auth-brand-column">
+            <a class="auth-brand" href="index.html" aria-label="Digital Aastraa home">
+                <img src="assets/images/Logo.webp" alt="Digital Aastraa">
+                <span>Editorial Studio</span>
+            </a>
+            <div class="auth-brand-message">
+                <span class="admin-eyebrow">DIGITAL AASTRAA JOURNAL</span>
+                <h1>Ideas deserve<br>a clear space.</h1>
+                <p>A private workspace for writing, publishing and managing your audience.</p>
+            </div>
+            <small>Private administrator access</small>
+        </div>
+
+        <section class="auth-form-column" aria-labelledby="authTitle">
+            <div class="auth-form-shell" id="adminLoginPanel">
+                <span class="auth-mobile-brand">Editorial Studio</span>
+                <h2 id="authTitle">Welcome back</h2>
+                <p>Sign in to continue to your workspace.</p>
+                <form class="admin-login-form" id="adminLoginForm">
+                    <label>
+                        <span>Email address</span>
+                        <input type="email" id="adminEmail" autocomplete="email" placeholder="you@company.com" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <span class="password-field">
+                            <input type="password" id="adminPassword" autocomplete="current-password" placeholder="Enter your password" required minlength="8">
+                            <button type="button" class="password-toggle" data-password-toggle="adminPassword" aria-label="Show password" aria-pressed="false"><span aria-hidden="true">Show</span></button>
+                        </span>
+                    </label>
+                    <div class="auth-form-row">
+                        <span id="capsLockNotice" class="caps-lock-notice" hidden>Caps Lock is on</span>
+                        <button type="button" class="auth-link-button" id="showForgotPassword">Forgot password?</button>
+                    </div>
+                    <button class="auth-submit" type="submit"><span>Sign in</span><span aria-hidden="true">→</span></button>
+                    <p class="admin-auth-status" id="adminAuthStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="auth-form-shell" id="forgotPasswordPanel" hidden>
+                <button class="auth-back-button" id="backToLogin" type="button">← Back to sign in</button>
+                <span class="admin-eyebrow">PASSWORD RECOVERY</span>
+                <h2>Reset your password</h2>
+                <p>Enter the administrator email. We will send a secure reset link.</p>
+                <form class="admin-login-form" id="forgotPasswordForm">
+                    <label>
+                        <span>Email address</span>
+                        <input type="email" id="forgotPasswordEmail" autocomplete="email" placeholder="you@company.com" required>
+                    </label>
+                    <button class="auth-submit" type="submit"><span>Send reset link</span><span aria-hidden="true">→</span></button>
+                    <p class="admin-auth-status" id="forgotPasswordStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <main class="admin-app" id="adminApp" hidden>
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar-head">
+                <a class="admin-brand admin-brand-sidebar" href="index.html">
+                    <img src="assets/images/Logo.webp" alt="Digital Aastraa">
+                    <span data-sidebar-label>Studio</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Collapse sidebar" aria-expanded="true">‹</button>
+            </div>
+            <nav class="admin-nav" aria-label="Admin sections">
+                <button class="admin-nav-item is-active" data-admin-section="blogs" title="Stories"><span class="admin-nav-icon" aria-hidden="true">✦</span><span data-sidebar-label>Stories</span><strong id="adminBlogCount">0</strong></button>
+                <button class="admin-nav-item" data-admin-section="submissions" title="Enquiries"><span class="admin-nav-icon" aria-hidden="true">↗</span><span data-sidebar-label>Enquiries</span><strong id="adminSubmissionCount">0</strong></button>
+                <button class="admin-nav-item" data-admin-section="resources" title="Resources"><span class="admin-nav-icon" aria-hidden="true">◫</span><span data-sidebar-label>Resources</span><strong id="adminResourceCount">0</strong></button>
+                <a class="admin-nav-item" href="blog.html" target="_blank" rel="noopener" title="View journal"><span class="admin-nav-icon" aria-hidden="true">↗</span><span data-sidebar-label>View journal</span></a>
+            </nav>
+            <div class="admin-account"><span class="admin-account-avatar" id="adminAccountAvatar">A</span><span data-sidebar-label><strong id="adminAccountEmail">Admin</strong><small>Administrator</small></span><button id="adminLogoutButton" title="Sign out" aria-label="Sign out">↪</button></div>
+        </aside>
+
+        <div class="admin-workspace">
+            <section class="admin-section" id="adminBlogsSection">
+                <div class="admin-list-view" id="adminBlogListView">
+                    <header class="admin-page-header"><div><span class="admin-eyebrow">CONTENT</span><h1>Stories</h1><p>Draft, publish and manage your journal.</p></div><button class="admin-primary-button" id="newBlogButton">New story</button></header>
+                    <div class="admin-toolbar"><label class="admin-search"><span aria-hidden="true">⌕</span><input type="search" id="blogSearchInput" placeholder="Search stories"></label><select id="blogStatusFilter" aria-label="Filter stories by status"><option value="all">All stories</option><option value="draft">Drafts</option><option value="published">Published</option><option value="trashed">Trash</option></select></div>
+                    <div class="admin-loading" id="adminBlogsLoading">Loading stories…</div>
+                    <div class="admin-story-list" id="adminStoryList"></div>
+                    <div class="admin-empty-state" id="adminStoriesEmpty" hidden><span>✦</span><h2>Write your first story.</h2><p>A clean page is ready when you are.</p><button class="admin-primary-button" data-new-blog>Start writing</button></div>
+                </div>
+
+                <div class="admin-editor-view" id="adminEditorView" hidden>
+                    <header class="admin-editor-topbar">
+                        <div class="editor-topbar-start"><button class="admin-text-button" id="closeEditorButton">← Stories</button><span class="admin-save-indicator" id="adminSaveIndicator">Unsaved</span></div>
+                        <div class="admin-editor-actions"><span class="editor-live-status"><i></i> Live article view</span><button class="admin-secondary-button" id="previewBlogButton">Full-page check</button><button class="admin-secondary-button" id="saveDraftButton">Save draft</button><button class="admin-danger-text" id="unpublishBlogButton" hidden>Unpublish</button><button class="admin-primary-button" id="publishBlogButton">Publish</button><button class="editor-settings-button" id="editorSettingsButton" type="button" aria-label="Open story settings" aria-expanded="false">•••</button></div>
+                    </header>
+                    <section class="admin-editor-main post-live-editor">
+                        <header class="post-header editor-live-header">
+                            <span class="blog-kicker" id="editorLiveCategory">DIGITAL AASTRAA JOURNAL</span>
+                            <input class="admin-title-input" id="blogTitleInput" type="text" placeholder="Title" maxlength="180">
+                            <textarea class="admin-excerpt-input post-excerpt" id="blogExcerptInput" placeholder="Tell readers what this story is about…" maxlength="420"></textarea>
+                            <div class="post-author-row editor-live-author"><span class="post-author-avatar" id="editorLiveAuthorAvatar">D</span><div><strong id="editorLiveAuthor">Digital Aastraa</strong><small class="post-author-role" id="editorLiveAuthorRole" hidden></small><div class="post-meta"><span>Writing now</span><span id="editorLiveReadTime">0 words · 0 sec read</span></div></div></div>
+                        </header>
+                        <figure class="editor-live-cover" id="editorLiveCover" hidden><div class="editor-live-cover-frame"><img id="editorLiveCoverImage" alt=""></div></figure>
+                        <p class="editor-command-hint"><kbd>/</kbd> for every block · <kbd>+</kbd> to browse · everything below uses the published article design</p>
+                        <div class="admin-editor-canvas post-content has-drop-cap" id="blogEditorCanvas"></div>
+                    </section>
+                    <button class="settings-backdrop" id="settingsBackdrop" type="button" aria-label="Close story settings" hidden></button>
+                    <aside class="admin-editor-settings" id="adminEditorSettings" aria-hidden="true">
+                        <header><div><span class="admin-eyebrow">STORY</span><h2>Settings</h2></div><button id="closeEditorSettings" type="button" aria-label="Close settings">×</button></header>
+                        <div class="admin-settings-scroll">
+                            <section class="admin-settings-block"><h3>Cover image</h3><label class="admin-cover-upload" id="adminCoverUpload"><input type="file" id="blogCoverInput" accept="image/jpeg,image/png,image/webp,image/gif"><span id="adminCoverPlaceholder">Upload a new image</span><img id="adminCoverPreview" alt="Cover preview" hidden></label><div class="admin-media-actions"><button class="admin-secondary-button" id="editCoverImageButton" type="button" hidden>Crop & focus</button><button class="admin-secondary-button" id="chooseCoverFromLibrary" type="button">Media library</button><button class="admin-text-button admin-remove-cover" id="removeCoverButton" type="button" hidden>Remove</button></div><label>Alt text <span class="required-label">Required</span><input type="text" id="blogCoverAltInput" maxlength="240" placeholder="Describe the image for screen readers"></label><p class="admin-settings-help">Click the cover or “Crop & focus” to open the full image editor.</p></section>
+                            <section class="admin-settings-block"><label>URL slug<input type="text" id="blogSlugInput" placeholder="my-story-slug"></label><label>Tags<input type="text" id="blogTagsInput" placeholder="design, growth, technology"></label></section>
+                            <section class="admin-settings-block"><h3>Article appearance</h3><label class="admin-switch-row"><span><strong>Large first letter</strong><small>Show a drop cap on the first paragraph.</small></span><input type="checkbox" id="blogDropCapInput" checked></label></section>
+                            <section class="admin-settings-block"><h3>Author profile</h3><label class="admin-author-upload"><input type="file" id="blogAuthorAvatarInput" accept="image/jpeg,image/png,image/webp"><span id="blogAuthorAvatarPlaceholder">Choose author photo</span><img id="blogAuthorAvatarPreview" alt="Author preview" hidden></label><button class="admin-text-button admin-remove-cover" id="removeAuthorAvatarButton" type="button" hidden>Remove author photo</button><label>Name<input type="text" id="blogAuthorInput" value="Digital Aastraa" maxlength="120"></label><label>Role<input type="text" id="blogAuthorRoleInput" placeholder="Editor, Strategist, Founder…" maxlength="120"></label><label>Short bio<textarea id="blogAuthorBioInput" maxlength="500" placeholder="A short introduction shown below the article."></textarea></label></section>
+                            <section class="admin-settings-block"><h3>Recommended stories</h3><p class="admin-settings-help">Choose up to three published stories and where readers should see them.</p><label>Placement<select id="blogRecommendationPosition"><option value="bottom">Bottom of article</option><option value="sidebar">Side of article</option></select></label><div class="admin-recommendation-list" id="blogRecommendationList"></div></section>
+                            <section class="admin-settings-block"><h3>Publishing</h3><label>Publish timing<select id="blogPublishMode"><option value="now">Publish immediately</option><option value="schedule">Schedule for later</option></select></label><label id="blogScheduleField" hidden>Date and time<input type="datetime-local" id="blogScheduleInput"></label><p class="admin-settings-help">Scheduled stories become public automatically at the selected time.</p></section>
+                            <section class="admin-settings-block"><h3>Search & social</h3><label>SEO title<input type="text" id="blogSeoTitleInput" maxlength="70"></label><label>Meta description<textarea id="blogSeoDescriptionInput" maxlength="170"></textarea></label></section>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="admin-section" id="adminSubmissionsSection" hidden>
+                <header class="admin-page-header"><div><span class="admin-eyebrow">SALES PIPELINE</span><h1>Enquiries</h1><p>Track every website lead from first contact to won business.</p></div><div class="admin-header-actions"><div class="admin-view-toggle" aria-label="Enquiry view"><button type="button" class="is-active" data-enquiry-view="funnel">Funnel</button><button type="button" data-enquiry-view="list">List</button></div><button class="admin-secondary-button" id="exportSubmissionsButton">Export CSV</button></div></header>
+                <div class="admin-toolbar"><label class="admin-search"><span aria-hidden="true">⌕</span><input type="search" id="submissionSearchInput" placeholder="Search name, email, source or service"></label><select id="submissionStatusFilter" aria-label="Filter enquiries by status"><option value="all">All stages</option><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="proposal">Proposal</option><option value="won">Won</option><option value="lost">Lost</option></select></div>
+                <div class="admin-loading" id="adminSubmissionsLoading">Loading enquiries…</div><div class="enquiry-funnel" id="adminEnquiryFunnel"></div><div class="admin-submission-list" id="adminSubmissionList" hidden></div><div class="admin-empty-state" id="adminSubmissionsEmpty" hidden><span>↗</span><h2>No enquiries yet.</h2><p>New website submissions will appear here.</p></div>
+            </section>
+
+            <section class="admin-section" id="adminResourcesSection" hidden>
+                <header class="admin-page-header"><div><span class="admin-eyebrow">SUPABASE</span><h1>Resources</h1><p>Monitor database, media and blog content.</p></div><button class="admin-secondary-button" id="refreshResourcesButton">Refresh usage</button></header>
+                <div class="admin-loading" id="adminResourcesLoading">Calculating usage…</div>
+                <div id="adminResourcesContent" hidden>
+                    <div class="resource-overview-grid">
+                        <article class="resource-meter-card"><div class="resource-card-head"><span>Database</span><strong id="resourceDatabasePercent">0%</strong></div><h2 id="resourceDatabaseText">Calculating remaining space…</h2><div class="resource-progress"><span id="resourceDatabaseBar"></span></div><p>Posts, enquiries, indexes and system data.</p></article>
+                        <article class="resource-meter-card"><div class="resource-card-head"><span>File storage</span><strong id="resourceStoragePercent">0%</strong></div><h2 id="resourceStorageText">Calculating remaining space…</h2><div class="resource-progress"><span id="resourceStorageBar"></span></div><p>Images and videos uploaded to the blog-images bucket.</p></article>
+                    </div>
+                    <div class="resource-stat-row"><span><strong id="resourcePublishedCount">0</strong> Published</span><span><strong id="resourceDraftCount">0</strong> Drafts</span><span><strong id="resourceTrashCount">0</strong> Trash</span><span><strong id="resourceMediaCount">0</strong> Media files</span><span><strong id="resourceVideoCount">0</strong> Videos</span><span><strong id="resourceEnquiryCount">0</strong> Enquiries</span><span><strong id="resourceOpenEnquiryCount">0</strong> Open leads</span><span><strong id="resourceAdminCount">0</strong> Admins</span></div>
+                    <section class="resource-panel"><header><div><h2>Media library</h2><p>Review uploaded images and videos and remove files you no longer need.</p></div><button class="admin-secondary-button" id="cleanUnusedMediaButton">Delete unused media</button></header><div class="resource-media-grid" id="resourceMediaList"></div><p class="resource-empty" id="resourceMediaEmpty" hidden>No uploaded media yet.</p></section>
+                    <section class="resource-panel"><header><div><h2>Trash</h2><p>Restore hidden stories or permanently remove them with their media.</p></div><button class="admin-danger-button" id="emptyTrashButton">Empty trash</button></header><div class="resource-trash-list" id="resourceTrashList"></div><p class="resource-empty" id="resourceTrashEmpty" hidden>Trash is empty.</p></section>
+                    <section class="resource-panel danger-zone"><header><div><span class="admin-eyebrow">DANGER ZONE</span><h2>Bulk cleanup</h2><p>These actions affect blog content only. Admin users and enquiries stay safe.</p></div></header><div class="danger-action"><div><strong>Delete all drafts</strong><span>Remove every unpublished draft and its media.</span></div><button class="admin-danger-button" id="deleteAllDraftsButton">Delete drafts</button></div><div class="danger-action"><div><strong>Delete all blog media</strong><span>Remove covers and inline images from every story.</span></div><button class="admin-danger-button" id="deleteAllMediaButton">Delete media</button></div><div class="danger-action"><div><strong>Clear all blog content</strong><span>Permanently remove every story and uploaded blog image.</span></div><button class="admin-danger-button" id="deleteAllBlogsButton">Clear blog</button></div></section>
+                    <a class="resource-dashboard-link" href="https://supabase.com/dashboard/project/imivigclrnkdtpgzvtex/usage" target="_blank" rel="noopener">Open full Supabase usage dashboard ↗</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <dialog class="admin-preview-dialog" id="blogPreviewDialog"><button class="admin-dialog-close" data-close-dialog="blogPreviewDialog" aria-label="Close preview">×</button><article class="admin-preview-article"><header class="post-header"><span class="admin-eyebrow">LIVE PREVIEW</span><h1 id="previewTitle"></h1><p class="post-excerpt" id="previewExcerpt"></p><div class="post-meta"><span id="previewAuthor"></span><span id="previewReadTime"></span></div></header><div class="post-cover post-cover-frame" id="previewCoverFrame" hidden><img id="previewCover" alt=""></div><div class="post-content" id="previewContent"></div></article></dialog>
+    <dialog class="image-settings-dialog" id="imageSettingsDialog"><header><div><span class="admin-eyebrow">IMAGE EDITOR</span><h2>Crop & focus</h2><p>Resize from any edge or corner, move the crop, then set the responsive focal point.</p></div><button class="admin-dialog-close" id="imageSettingsCancel" type="button" aria-label="Cancel image editing">×</button></header><div class="image-editor-tabs" id="imageEditorTabs"><button class="is-active" type="button" data-image-mode="crop">Crop</button><button type="button" data-image-mode="focus">Focal point</button></div><div class="image-settings-layout"><section><div class="image-editor-viewport" id="imageEditorViewport"><div class="image-editor-canvas" id="imageEditorCanvas"><img id="imageSettingsPreview" alt=""><div class="image-crop-box" id="imageCropBox"><i data-crop-handle="nw"></i><i data-crop-handle="n"></i><i data-crop-handle="ne"></i><i data-crop-handle="e"></i><i data-crop-handle="se"></i><i data-crop-handle="s"></i><i data-crop-handle="sw"></i><i data-crop-handle="w"></i></div><button class="image-focus-handle" id="imageFocusHandle" type="button" aria-label="Drag image focal point"></button></div><div class="image-focus-empty" id="imageFocusEmpty">Choose an image to begin</div></div><p class="image-focus-help" id="imageEditorHelp">Drag the crop area to move it. Drag any side or corner to resize it.</p></section><aside class="image-settings-panel"><div class="image-settings-actions"><label class="admin-secondary-button">Upload / replace<input type="file" id="imageSettingsUpload" accept="image/jpeg,image/png,image/webp,image/gif"></label><button class="admin-secondary-button" id="imageSettingsLibrary" type="button">Media library</button></div><label>Alt text <span class="required-label">Required</span><input type="text" id="imageSettingsAlt" maxlength="240" placeholder="Describe what is visible"></label><fieldset><legend>Crop ratio</legend><div class="image-ratio-options" id="imageRatioOptions"><button type="button" data-image-ratio="free">Free</button><button type="button" data-image-ratio="original">Original</button><button type="button" data-image-ratio="16/9">16:9</button><button type="button" data-image-ratio="4/3">4:3</button><button type="button" data-image-ratio="1/1">Square</button><button type="button" data-image-ratio="3/4">Portrait</button></div></fieldset><div class="image-editor-secondary-actions"><button class="admin-secondary-button" id="imageCropReset" type="button">Reset crop</button><button class="admin-danger-text" id="imageSettingsRemove" type="button">Remove image</button></div><div class="image-editor-apply-actions"><button class="admin-secondary-button" id="imageSettingsCancelButton" type="button">Cancel</button><button class="admin-primary-button" id="imageSettingsDone" type="button">Apply</button></div></aside></div></dialog>
+    <dialog class="admin-media-dialog" id="mediaLibraryDialog"><header><div><span class="admin-eyebrow">REUSE MEDIA</span><h2>Choose an image</h2><p>One uploaded file can be used in any number of places.</p></div><div class="media-dialog-actions"><label class="admin-primary-button">Upload media<input type="file" id="mediaLibraryUploadInput" accept="image/jpeg,image/png,image/webp,image/gif" multiple></label><button class="admin-dialog-close" data-close-dialog="mediaLibraryDialog" aria-label="Close media library">×</button></div></header><label class="admin-search media-library-search"><span aria-hidden="true">⌕</span><input type="search" id="mediaLibrarySearch" placeholder="Search uploaded images"></label><div class="media-upload-status" id="mediaLibraryUploadStatus" role="status" aria-live="polite"></div><div class="media-picker-grid" id="mediaPickerGrid"></div><p class="resource-empty" id="mediaPickerEmpty" hidden>No reusable images found. Upload media to add the first image.</p></dialog>
+    <dialog class="admin-enquiry-dialog" id="enquiryDialog"><button class="admin-dialog-close" data-close-dialog="enquiryDialog" aria-label="Close enquiry">×</button><div class="admin-enquiry-detail"><span class="admin-eyebrow">ENQUIRY DETAILS</span><h2 id="enquiryName"></h2><div class="admin-enquiry-grid" id="enquiryMeta"></div><div class="admin-enquiry-message"><span>Project description</span><p id="enquiryMessage"></p></div><div class="admin-enquiry-fields"><label>Funnel stage<select id="enquiryStatus"><option value="new">New</option><option value="contacted">Contacted</option><option value="qualified">Qualified</option><option value="proposal">Proposal sent</option><option value="won">Won</option><option value="lost">Lost</option></select></label><label>Estimated value (₹)<input id="enquiryEstimatedValue" type="number" min="0" step="1" placeholder="0"></label><label>Next follow-up<input id="enquiryFollowUp" type="datetime-local"></label></div><label>Private notes<textarea id="enquiryNotes" rows="5" placeholder="Add follow-up notes…"></textarea></label><section class="enquiry-history"><h3>Stage history</h3><div id="enquiryHistoryList"></div></section><button class="admin-primary-button" id="saveEnquiryButton">Save enquiry</button></div></dialog>
+    <dialog class="admin-action-dialog" id="deleteStoryDialog"><button class="admin-dialog-close" data-close-dialog="deleteStoryDialog" aria-label="Close">×</button><div class="admin-action-dialog-body"><span class="admin-eyebrow">REMOVE STORY</span><h2 id="deleteStoryTitle">Choose what to remove</h2><p>Move it to trash to hide it from the website and keep it in Supabase, or delete it permanently with all uploaded media.</p><div class="delete-choice-grid"><button id="trashStoryButton"><strong>Move to trash</strong><span>Hidden from the website. Can be restored.</span></button><button id="permanentDeleteStoryButton" class="is-danger"><strong>Delete permanently</strong><span>Removed from Supabase and cannot be restored.</span></button></div></div></dialog>
+    <dialog class="admin-confirm-dialog" id="confirmActionDialog"><div class="admin-action-dialog-body"><span class="admin-eyebrow">CONFIRM ACTION</span><h2 id="confirmActionTitle">Are you sure?</h2><p id="confirmActionMessage"></p><label id="confirmActionLabel">Type the confirmation text<input id="confirmActionInput" type="text" autocomplete="off"></label><div class="confirm-dialog-actions"><button class="admin-secondary-button" data-close-dialog="confirmActionDialog">Cancel</button><button class="admin-danger-button" id="confirmActionButton" disabled>Confirm</button></div></div></dialog>
+    <div class="admin-toast" id="adminToast" role="status" aria-live="polite"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4" integrity="sha384-yiVMs0R/Jyz7OhoXa/DsEMUSBLjEhr/QJta2ONO+zB6I8/GmNg/7AUFrZmAJV7KV" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.14/dist/purify.min.js" integrity="sha384-46dPGH1XlTmj7bc50bqLjTdORXs/3EP2QpA/6EWbelYWOY9VGp+87RT61S3Mcslb" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@2.31.6" integrity="sha384-3u+jsluZvFYgJmY3ocjOPkeNHjQViTRvNZn3KXNL/tgTD6wxoOZdRZ7zC8lp1tjp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@2.8.9" integrity="sha384-GSbFuDgBZjVvcs9uk7CgQ9Z2xl37HNOQxlga6qbOBLhmcEkqRR0JPVYUxSQYExlh" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@2.0.9" integrity="sha384-wubHxyXq24CXMvBIvcOlihGdIAarUXzj1I4PFG+EeONKViDXERyq1/lStO/hKH1a" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@2.7.6" integrity="sha384-HM4vn7iJKzv7+5AfGmUwgp9M4KCKp5jtBsdBLPyYyc889JbuzAVevhXXDy1fv2tL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/delimiter@1.4.2" integrity="sha384-Uv4Z4GsgfrA5pg3scHQtmhD8yCstnJ2cDPCDFmwlfPdW689hXTo451CHKh/ZI3/h" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.10.3" integrity="sha384-4APy4Xn/iX/qUvo/g/9WQ6tocyb5WABwaRbY9D2G1/yEjoK0Cia89UmX77NEqOmr" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.9.4" integrity="sha384-O4aH2oWmCY/ymLOlz2QOwhGfOAi554sCVa1hlGPNmdmu7OKaPn8DdhG3uXoj2ldJ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/checklist@1.6.0" integrity="sha384-+wQlDPdbT+Mx6HnMVspXwm75cTzs4T/mpSXsrjzAq6HGFZJlsCI7bcWHoHxXxP54" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@2.4.6" integrity="sha384-TTjO/grh9whCn5WPTlBRDthsMVStwyRa/dM8A0S5kH7v0CyChqQRNgb1w9tCoyjq" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/warning@1.4.1" integrity="sha384-eaZjb9Cqbq3pCHxBm6wcjsbL2nWwTesjHMePFF+wcN8kZCMOUDw+m4A7P0LyAacI" crossorigin="anonymous"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/blog-renderer.js?v=20260830-cropeditor"></script>
+    <script src="assets/js/admin.js?v=20260901-enquiry-types"></script>
+</body>
+</html>

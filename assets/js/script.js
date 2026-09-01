@@ -149,168 +149,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --------------------------------------------------------------------------
-    // 5. MOBILE BOTTOM SHEET + BOTTOM DOCK
+    // 5. SHARED DESKTOP + MOBILE NAVIGATION STATE
     // --------------------------------------------------------------------------
-    const mobileMenuBtn    = document.getElementById('mobileMenuBtn');
-    const bottomSheet      = document.getElementById('mobileMenuOverlay');
-    const sheetBackdrop    = document.getElementById('sheetBackdrop');
-    const sheetCloseBtn    = document.getElementById('sheetCloseBtn');
-    const dockMenuBtn      = document.getElementById('dockMenu');
-    const sheetHomeLink    = document.getElementById('sheetHomeLink');
-    let sheetTrigger = null;
-
-    function openSheet(trigger = document.activeElement) {
-        if (!bottomSheet) return;
-        sheetTrigger = trigger instanceof HTMLElement ? trigger : mobileMenuBtn;
-        bottomSheet.inert = false;
-        bottomSheet.classList.add('is-open');
-        bottomSheet.setAttribute('aria-hidden', 'false');
-        if (sheetBackdrop) sheetBackdrop.classList.add('is-open');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.classList.add('is-active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-        }
-        if (dockMenuBtn)   dockMenuBtn.classList.add('active');
-        document.body.classList.add('sheet-is-open');
-        document.body.style.overflow = 'hidden';
-        window.requestAnimationFrame(() => sheetCloseBtn?.focus({ preventScroll: true }));
-    }
-
-    function closeSheet({ restoreFocus = true } = {}) {
-        if (!bottomSheet) return;
-        bottomSheet.classList.remove('is-open');
-        bottomSheet.setAttribute('aria-hidden', 'true');
-        bottomSheet.inert = true;
-        if (sheetBackdrop) sheetBackdrop.classList.remove('is-open');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.classList.remove('is-active');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        }
-        if (dockMenuBtn)   dockMenuBtn.classList.remove('active');
-        document.body.classList.remove('sheet-is-open');
-        document.body.style.overflow = '';
-        if (restoreFocus && sheetTrigger instanceof HTMLElement) {
-            sheetTrigger.focus({ preventScroll: true });
-        }
-    }
-
-    // Toggle from header hamburger
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            if (bottomSheet && bottomSheet.classList.contains('is-open')) {
-                closeSheet();
-            } else {
-                openSheet(mobileMenuBtn);
-            }
-        });
-    }
-
-    // Open from dock Menu tab
-    if (dockMenuBtn) {
-        dockMenuBtn.addEventListener('click', () => openSheet(dockMenuBtn));
-    }
-
-    // Close via X button in sheet
-    if (sheetCloseBtn) {
-        sheetCloseBtn.addEventListener('click', closeSheet);
-    }
-
-    // Close via backdrop tap
-    if (sheetBackdrop) {
-        sheetBackdrop.addEventListener('click', closeSheet);
-    }
-
-    document.addEventListener('keydown', (event) => {
-        if (!bottomSheet?.classList.contains('is-open')) return;
-
-        if (event.key === 'Escape') {
-            closeSheet();
-            return;
-        }
-
-        if (event.key === 'Tab') {
-            const focusable = Array.from(bottomSheet.querySelectorAll('a[href], button:not([disabled])'));
-            if (!focusable.length) return;
-            const first = focusable[0];
-            const last = focusable[focusable.length - 1];
-
-            if (event.shiftKey && document.activeElement === first) {
-                event.preventDefault();
-                last.focus();
-            } else if (!event.shiftKey && document.activeElement === last) {
-                event.preventDefault();
-                first.focus();
-            }
-        }
-    });
-
-    // Close on any sheet nav link click
-    if (bottomSheet) {
-        const sheetLinks = bottomSheet.querySelectorAll('a');
-        sheetLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                closeSheet({ restoreFocus: false });
-            });
-        });
-    }
-
-    // Home link in sheet scrolls to top
-    if (sheetHomeLink) {
-        sheetHomeLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    }
-
     // --------------------------------------------------------------------------
     // BOTTOM DOCK ACTIVE TAB — scroll-based section tracking
     // --------------------------------------------------------------------------
-    const dockTabs = {
-        home:     document.getElementById('dockHome'),
-        services: document.getElementById('dockServices'),
-        think:    document.getElementById('dockThink'),
-    };
-    const sheetNavRows = Array.from(document.querySelectorAll('.sheet-nav-row[data-section]'));
-
-    const sectionMap = [
-        { id: 'heroSection',  tab: 'home' },
-        { id: 'manifesto',    tab: 'think' },
-        { id: 'what-we-do',   tab: 'services' },
+    const siteNavigationLinks = Array.from(document.querySelectorAll('[data-site-nav]'));
+    const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const homeSections = [
+        { id: 'heroSection', key: 'home' },
+        { id: 'what-we-do', key: 'services' },
+        { id: 'industries', key: 'industries' }
     ];
 
+    function getCurrentNavigationKey() {
+        if (currentFile === 'blog.html' || currentFile === 'post.html') return 'blog';
+
+        let currentKey = 'home';
+        const scrollPosition = window.scrollY + 120;
+        homeSections.forEach(({ id, key }) => {
+            const section = document.getElementById(id);
+            if (section && section.offsetTop <= scrollPosition) currentKey = key;
+        });
+        return currentKey;
+    }
+
     function updateNavigationActive() {
-        if (window.innerWidth > 1024) return;
-        let currentTab = 'home';
-        const scrollY = window.scrollY + 100;
-
-        sectionMap.forEach(({ id, tab }) => {
-            const el = document.getElementById(id);
-            if (el && el.offsetTop <= scrollY) {
-                currentTab = tab;
-            }
-        });
-
-        if (window.innerWidth <= 768) {
-            Object.entries(dockTabs).forEach(([key, el]) => {
-                if (!el) return;
-                const isCurrent = key === currentTab;
-                el.classList.toggle('active', isCurrent);
-                if (isCurrent) el.setAttribute('aria-current', 'page');
-                else el.removeAttribute('aria-current');
-            });
-        }
-
-        let currentSheetRow = sheetNavRows[0] || null;
-        sheetNavRows.forEach(row => {
-            const section = document.getElementById(row.dataset.section);
-            if (section && section.offsetTop <= scrollY) currentSheetRow = row;
-        });
-
-        sheetNavRows.forEach(row => {
-            const isCurrent = row === currentSheetRow;
-            row.classList.toggle('is-current', isCurrent);
-            if (isCurrent) row.setAttribute('aria-current', 'page');
-            else row.removeAttribute('aria-current');
+        const currentKey = getCurrentNavigationKey();
+        siteNavigationLinks.forEach(link => {
+            const isCurrent = link.dataset.siteNav === currentKey;
+            link.classList.toggle('active', isCurrent);
+            link.classList.toggle('is-current', isCurrent);
+            if (isCurrent) link.setAttribute('aria-current', 'page');
+            else link.removeAttribute('aria-current');
         });
     }
 
@@ -327,7 +198,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', requestNavigationUpdate, { passive: true });
     updateNavigationActive();
 
-
+    const industriesSection = document.getElementById('industries');
+    if (industriesSection) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion || !('IntersectionObserver' in window)) {
+            industriesSection.classList.add('is-visible');
+        } else {
+            industriesSection.classList.add('is-observed');
+            const industriesObserver = new IntersectionObserver(entries => {
+                if (!entries.some(entry => entry.isIntersecting)) return;
+                industriesSection.classList.add('is-visible');
+                industriesObserver.disconnect();
+                window.setTimeout(() => industriesSection.classList.remove('is-observed'), 1000);
+            }, { threshold: 0.12 });
+            industriesObserver.observe(industriesSection);
+        }
+    }
 
     // --------------------------------------------------------------------------
     // 6. ANIMATED NUMBER COUNTER (SECTION 05 — RESULTS)
@@ -437,18 +323,18 @@ document.addEventListener('DOMContentLoaded', () => {
     //     Stand Out.png starts hidden BELOW the scene and slides UP as you scroll.
     //     The scene is sticky so the images stay in viewport during the scroll travel.
     // --------------------------------------------------------------------------
-    const brandSection  = document.getElementById('brand-statement');
+    const brandSection = document.getElementById('brand-statement');
     const standoutLayer = document.getElementById('standoutLayer');
 
     if (brandSection && standoutLayer) {
         const updateParallax = () => {
-            const rect        = brandSection.getBoundingClientRect();
+            const rect = brandSection.getBoundingClientRect();
             // Total scrollable distance within the section (200vh - 100vh = 100vh)
             const totalScroll = brandSection.offsetHeight - window.innerHeight;
             // How far scrolled into section: 0 at entry, totalScroll at exit
-            const scrolled    = Math.max(0, -rect.top);
+            const scrolled = Math.max(0, -rect.top);
             // Progress: 0.0 (just entered) → 1.0 (fully scrolled through)
-            const progress    = Math.min(scrolled / totalScroll, 1);
+            const progress = Math.min(scrolled / totalScroll, 1);
 
             // Ease-in-out (cubic) for a smooth, organic parallax feel
             const t = progress;
@@ -486,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
         capPillBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const targetKey = btn.getAttribute('data-target');
-                
+
                 // Update Pill buttons
                 capPillBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
@@ -515,9 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
    STAND OUT — Scroll-triggered right overlay + staggered text reveal
    ========================================================================== */
 (function () {
-    const section  = document.getElementById('stand-out');
-    const overlay  = document.getElementById('standoutOverlay');
-    const content  = document.getElementById('standoutContent');
+    const section = document.getElementById('stand-out');
+    const overlay = document.getElementById('standoutOverlay');
+    const content = document.getElementById('standoutContent');
     if (!section || !overlay || !content) return;
 
     // Apply per-element transition delays from data-delay attributes
@@ -601,7 +487,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function positionCards() {
             const isMobile = window.innerWidth <= 768;
             // Tuck side cards heavily behind the center card so only a sliver peeks out
-            const shiftPx = isMobile ? 60 : 110; 
+            const shiftPx = isMobile ? 60 : 110;
             // Scale side cards down more to emphasize 3D depth (center card is "closer")
             const sideScale = isMobile ? 0.82 : 0.84;
 
@@ -957,18 +843,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let impactTimer = null;
     if (pushButton) {
-        const calendlyUrl = 'https://calendly.com/digital-as/das-meeting';
-        const openCalendly = () => {
-            if (window.Calendly?.initPopupWidget) {
-                window.Calendly.initPopupWidget({ url: calendlyUrl });
-                return;
-            }
-
-            // Handle the rare case where the deferred Calendly script is still loading.
-            const calendlyScript = document.querySelector('script[src*="assets.calendly.com/assets/external/widget.js"]');
-            calendlyScript?.addEventListener('load', openCalendly, { once: true });
-        };
-
         pushButton.addEventListener('click', () => {
             window.clearTimeout(impactTimer);
             section.classList.remove('attention-impact');
@@ -987,8 +861,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.replayAttentionParticles();
             }
 
-            // Open immediately; the feedback animation continues underneath the popup.
-            openCalendly();
+            // Open the same audit form used by every audit CTA on the website.
+            window.DASAuditModal?.open(pushButton);
         });
     }
 

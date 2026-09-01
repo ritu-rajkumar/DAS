@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Coming Soon | Digital Aastraa</title>
+    <title>Journal | Digital Aastraa</title>
+    <link rel="icon" type="image/webp" href="assets/images/Logo.webp">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -17,117 +18,16 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Instrument+Serif:ital@1&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@1.39.0/dist/umd/lucide.min.js"
+        integrity="sha384-ueMZWsJB99p1SCMICHGDK/IL9ZKGuI1twYOPLoFlYI0sDz25ILSwq6W82/LsYvlt"
+        crossorigin="anonymous"></script>
     
     <!-- Shared Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/components.css?v=20260901-compact3">
+    <link rel="stylesheet" href="assets/css/blog.css?v=20260901-center2">
     
-    <style>
-        /* Specific styles for the Blog Coming Soon section */
-        .blog-coming-soon {
-            padding: 200px 5% 120px 5%;
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            background-color: #FFFFFF; /* White background */
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Subtle background glow */
-        .blog-coming-soon::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 20%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(255,85,40,0.1) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .bcs-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            z-index: 1;
-            position: relative;
-        }
-
-        .bcs-text-col {
-            width: 100%;
-            max-width: 900px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1.5rem;
-            animation: slideInLeft 1s ease-out;
-        }
-
-        .ascii-coming {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: clamp(6px, 1vw, 16px);
-            white-space: pre;
-            line-height: 1.1;
-            color: #FF5528; /* Brand orange */
-            text-shadow: 0 0 15px rgba(255,85,40,0.4);
-            margin: 0;
-            font-weight: 900;
-        }
-
-        .bold-soon {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(6rem, 12vw, 15rem);
-            font-weight: 900;
-            margin: -2rem 0 0 0;
-            line-height: 0.85;
-            background: linear-gradient(180deg, #111111 0%, #777777 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            letter-spacing: -4px;
-        }
-
-        .bcs-subtitle {
-            color: #555555;
-            font-size: 1.4rem;
-            font-weight: 500;
-            max-width: 500px;
-            line-height: 1.5;
-            margin: 1rem auto 0 auto;
-        }
-
-        @keyframes slideInLeft {
-            0% { opacity: 0; transform: translateX(-40px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes slideInRight {
-            0% { opacity: 0; transform: translateX(40px); }
-            100% { opacity: 1; transform: translateX(0); }
-        }
-
-        @media (max-width: 992px) {
-            .bcs-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .ascii-coming {
-                font-size: clamp(4px, 1.4vw, 12px);
-            }
-            .bold-soon {
-                letter-spacing: -2px;
-                margin: -1rem 0 0 0;
-            }
-        }
-    </style>
 </head>
 <body class="page-blog">
     <!-- Google Tag Manager (noscript) -->
@@ -135,17 +35,12 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Mouse Ambient Cursor Glow & Dot -->
-    <div class="cursor-dot" id="cursorDot">
-        <span class="cursor-text" id="cursorText"></span>
-    </div>
-
     <!-- ================= NAVBAR ================= -->
     <header class="site-header" id="siteHeader">
         <div class="header-container">
             <!-- Logo -->
             <a href="index.html" class="logo" aria-label="Digital Aastraa Homepage">
-                <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="logo-img">
+                <img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="logo-img">
                 <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
                 <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
             </a>
@@ -154,16 +49,16 @@
             <nav class="desktop-nav" aria-label="Main Navigation">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="index.html#what-we-do" class="nav-link">Services</a>
+                        <a href="index.html" class="nav-link" data-site-nav="home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#work" class="nav-link">Work</a>
+                        <a href="index.html#what-we-do" class="nav-link" data-site-nav="services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html#process" class="nav-link">Process</a>
+                        <a href="index.html#industries" class="nav-link" data-site-nav="industries">Industries</a>
                     </li>
                     <li class="nav-item">
-                        <a href="blog.html" class="nav-link active">Blog</a>
+                        <a href="blog.html" class="nav-link active" data-site-nav="blog">Blog</a>
                     </li>
                 </ul>
             </nav>
@@ -172,110 +67,39 @@
             <div class="header-cta-wrapper">
                 <a href="index.html#contact" class="nav-cta">
                     <span>Free Digital Audit</span>
-                    <i data-lucide="arrow-right" class="cta-arrow"></i>
+                    <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
                 </a>
 
-                <!-- Mobile Menu Button -->
-                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-controls="mobileMenuOverlay" aria-expanded="false">
-                    <span class="mob-bar mob-bar-1"></span>
-                    <span class="mob-bar mob-bar-2"></span>
-                    <span class="mob-bar mob-bar-3"></span>
-                </button>
             </div>
         </div>
     </header>
 
-    <!-- ================= BOTTOM SHEET BACKDROP ================= -->
-    <div class="sheet-backdrop" id="sheetBackdrop"></div>
-
-    <!-- ================= MOBILE BOTTOM SHEET MENU ================= -->
-    <div class="mobile-bottom-sheet" id="mobileMenuOverlay" role="dialog" aria-modal="true" aria-label="Mobile navigation" aria-hidden="true">
-        <div class="sheet-drag-handle"></div>
-        <div class="sheet-header">
-            <div class="sheet-brand" aria-label="Digital Aastraa Solution">
-                <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="sheet-logo">
-                <span class="mobile-brand-mark" aria-hidden="true">DA<span>S</span></span>
-                <span class="mobile-brand-name"><strong>Digital Aastraa</strong><small>Solution</small></span>
+    <main class="blog-index" id="blogIndex">
+        <section class="blog-index-hero is-posts">
+            <h1>Blog</h1>
+            <div class="blog-data-loader" id="blogDataLoader" role="status" aria-live="polite">
+                <div class="blog-loader-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div><strong>Loading fresh ideas</strong><p>Bringing the latest stories into focus.</p></div>
             </div>
-            <button class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close menu">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-        </div>
+        </section>
 
-        <nav class="sheet-nav">
-            <a href="index.html" class="sheet-nav-row" id="sheetHomeLink">
-                <div class="snr-icon-wrap snr-icon-dark">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                </div>
-                <div class="snr-text">
-                    <span class="snr-label">Home</span>
-                    <span class="snr-sub">Back to the beginning</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
+        <section class="blog-feed" aria-labelledby="latestArticlesTitle">
+            <div class="blog-topic-nav" id="blogTopics" aria-label="Filter journal topics"></div>
 
-            <a href="index.html#what-we-do" class="sheet-nav-row">
-                <div class="snr-icon-wrap snr-icon-blue">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <div class="snr-text">
-                    <span class="snr-label">Services</span>
-                    <span class="snr-sub">Four connected capabilities</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-
-            <a href="index.html#process" class="sheet-nav-row">
-                <div class="snr-icon-wrap snr-icon-orange">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                </div>
-                <div class="snr-text">
-                    <span class="snr-label">How We Work</span>
-                    <span class="snr-sub">A focused five-step process</span>
-                </div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-            <a href="index.html#stand-out" class="sheet-nav-row">
-                <div class="snr-icon-wrap snr-icon-blue"></div>
-                <div class="snr-text"><span class="snr-label">Our Work</span><span class="snr-sub">Ideas designed to stand out</span></div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-            <a href="blog.html" class="sheet-nav-row">
-                <div class="snr-icon-wrap snr-icon-orange"></div>
-                <div class="snr-text"><span class="snr-label">Blog</span><span class="snr-sub">Ideas, updates and insights</span></div>
-                <svg class="snr-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
-            </a>
-        </nav>
-
-        <div class="sheet-footer">
-            <a href="index.html#contact" class="sheet-cta-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                BOOK FREE AUDIT
-            </a>
-            <a href="mailto:hello@digitalaastraa.com" class="sheet-email-link">hello@digitalaastraa.com</a>
-        </div>
-    </div>
-
-    <!-- ================= BLOG COMING SOON MAIN SECTION ================= -->
-    <section class="blog-coming-soon">
-        <div class="bcs-container">
-            
-            <!-- Centered Text Content -->
-            <div class="bcs-text-col">
-                <pre class="ascii-coming" aria-label="COMING">
-  ██████╗ ██████╗ ███╗   ███╗██╗███╗   ██╗ ██████╗ 
- ██╔════╝██╔═══██╗████╗ ████║██║████╗  ██║██╔════╝ 
- ██║     ██║   ██║██╔████╔██║██║██╔██╗ ██║██║  ███╗
- ██║     ██║   ██║██║╚██╔╝██║██║██║╚██╗██║██║   ██║
- ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║██║ ╚████║╚██████╔╝
-  ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
-                </pre>
-                <h1 class="bold-soon">SOON.</h1>
-                <p class="bcs-subtitle">We're brewing up insightful case studies, growth marketing deep dives, and agency updates. Stay tuned.</p>
+            <article class="blog-featured" id="blogFeatured" hidden></article>
+            <div class="blog-feed-heading" id="blogMoreHeading" hidden>
+                <div><span class="blog-section-number">LATEST</span><h2 id="latestArticlesTitle">More from the journal</h2></div>
+                <span class="blog-feed-line" aria-hidden="true"></span>
             </div>
+            <div class="blog-card-grid" id="blogGrid"></div>
 
-        </div>
-    </section>
+            <div class="blog-empty" id="blogEmpty" hidden>
+                <span>THE FIRST STORY IS BREWING</span>
+                <h2>Fresh ideas will appear here soon.</h2>
+                <p>Check back shortly for insights from the Digital Aastraa team.</p>
+            </div>
+        </section>
+    </main>
 
     <!-- ================= FOOTER ================= -->
     <footer class="site-footer">
@@ -285,7 +109,7 @@
                 <!-- Brand Column -->
                 <div class="footer-brand-col">
                     <a href="index.html" class="footer-logo">
-                        <img src="Asset/Logo.png" alt="Digital Aastraa Solution Logo" class="footer-logo-img">
+                        <img src="assets/images/Logo.webp" alt="Digital Aastraa Solution Logo" class="footer-logo-img" width="2048" height="768" loading="lazy" decoding="async">
                     </a>
                     <p class="footer-tagline">We turn bold ideas into high-performing digital products & scalable growth engines.</p>
                     
@@ -305,8 +129,9 @@
                         <ul class="f-list">
                             <li><a href="index.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Home</a></li>
                             <li><a href="index.html#manifesto"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> What We Think</a></li>
-                            <li><a href="index.html#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Our Growth Engine</a></li>
-                            <li><a href="index.html#stand-out"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Stand Out</a></li>
+                            <li><a href="index.html#what-we-do"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Services</a></li>
+                            <li><a href="index.html#process"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> How We Work</a></li>
+                            <li><a href="index.html#industries"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg> Industries</a></li>
                         </ul>
                     </div>
 
@@ -327,14 +152,11 @@
                     <div class="f-col">
                         <h4 class="f-title">CONNECT</h4>
                         <div class="f-social-icons">
-                            <a href="#" class="social-icon-btn" aria-label="Instagram">
+                            <a href="https://www.instagram.com/digital_aastraasolution/" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                             </a>
-                            <a href="#" class="social-icon-btn" aria-label="Facebook">
+                            <a href="https://www.facebook.com/aastraasolution" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                            </a>
-                            <a href="#" class="social-icon-btn" aria-label="LinkedIn">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                             </a>
                         </div>
                     </div>
@@ -361,11 +183,11 @@
 
     <!-- ================= MOBILE BOTTOM NAVIGATION DOCK ================= -->
     <nav class="mobile-bottom-dock" id="mobileBottomDock" aria-label="Mobile Navigation">
-        <a href="index.html" class="dock-tab" id="dockHome" aria-label="Home">
+        <a href="index.html" class="dock-tab" id="dockHome" data-site-nav="home" aria-label="Home">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
             <span class="dock-label">Home</span>
         </a>
-        <a href="index.html#what-we-do" class="dock-tab" id="dockServices" aria-label="Services">
+        <a href="index.html#what-we-do" class="dock-tab" id="dockServices" data-site-nav="services" aria-label="Services">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             <span class="dock-label">Services</span>
         </a>
@@ -375,22 +197,33 @@
             </div>
             <span class="dock-label">Audit</span>
         </a>
-        <a href="blog.html" class="dock-tab active" id="dockThink" aria-label="Blog">
+        <a href="index.html#industries" class="dock-tab" id="dockIndustries" data-site-nav="industries" aria-label="Industries">
+            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span class="dock-label">Industries</span>
+            <span class="dock-active-pip"></span>
+        </a>
+        <a href="blog.html" class="dock-tab" id="dockBlog" data-site-nav="blog" aria-label="Blog">
             <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             <span class="dock-label">Blog</span>
             <span class="dock-active-pip"></span>
         </a>
-        <button class="dock-tab" id="dockMenu" aria-label="Menu">
-            <svg class="dock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <span class="dock-label">Menu</span>
-            <span class="dock-active-pip"></span>
-        </button>
     </nav>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.112.4"
+        integrity="sha384-yiVMs0R/Jyz7OhoXa/DsEMUSBLjEhr/QJta2ONO+zB6I8/GmNg/7AUFrZmAJV7KV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.14/dist/purify.min.js"
+        integrity="sha384-46dPGH1XlTmj7bc50bqLjTdORXs/3EP2QpA/6EWbelYWOY9VGp+87RT61S3Mcslb"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/supabase-config.js"></script>
+    <script src="assets/js/audit-modal.js?v=20260902-security1"></script>
+    <script src="assets/js/contact-supabase.js?v=20260902-security1"></script>
+    <script src="assets/js/blog-renderer.js?v=20260830-cropeditor"></script>
+    <script src="assets/js/blog.js?v=20260901-loader"></script>
+    <script src="assets/js/script.js?v=20260901-premium2"></script>
     <script>
         lucide.createIcons();
     </script>
 </body>
-</html
+</html>
